@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .jsx,.js src",
     "precommit": "eslint --ext .jsx,.js --fix src",
-    "prepush": "eslint --ext .jsx,.js src"
+    "prepush": "npm run lint"
   },
   "devDependencies": {
     "eslint": "^4.4.1",
