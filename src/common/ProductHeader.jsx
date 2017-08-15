@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Heading = styled.div`
   padding: 0 .5rem;
@@ -32,10 +32,8 @@ const Text = styled.div`
   }
 `;
 
-export default () => {
-  return (
-    <Heading>
-      <Text>Long Cotton Gabardine Car Coat Coat Coat Coat Coat</Text>
-    </Heading>
-  );
-};
+export default () => (
+  <Heading>
+    <Text>Long Cotton Gabardine Car Coat Coat Coat Coat Coat</Text>
+  </Heading>
+);

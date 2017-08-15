@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Description from "./Description";
-import Delivery from "./Delivery";
+import React from 'react';
+import styled from 'styled-components';
+import Description from './Description';
+import Delivery from './Delivery';
 
 const Wrapper = styled.section`
   padding: 0 .5rem;
@@ -18,11 +18,9 @@ const Wrapper = styled.section`
   }
 `;
 
-export default () => {
-  return (
-    <Wrapper>
-      <Description />
-      <Delivery />
-    </Wrapper>
-  );
-};
+export default () => (
+  <Wrapper>
+    <Description />
+    <Delivery />
+  </Wrapper>
+);

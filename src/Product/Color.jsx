@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Colors = styled.div`
   padding: 0 .5rem;
@@ -58,18 +58,16 @@ function ColorButton(props) {
   );
 }
 
-export default () => {
-  return (
-    <Colors>
-      <ColorTxt>
+export default () => (
+  <Colors>
+    <ColorTxt>
         Colour: <b>Honey</b>
-      </ColorTxt>
+    </ColorTxt>
 
-      <ColorPanel>
-        <ColorButton color="#232122" name="black" />
+    <ColorPanel>
+      <ColorButton color="#232122" name="black" />
 
-        <ColorButton active color="#cfa880" name="honey" />
-      </ColorPanel>
-    </Colors>
-  );
-};
+      <ColorButton active color="#cfa880" name="honey" />
+    </ColorPanel>
+  </Colors>
+);

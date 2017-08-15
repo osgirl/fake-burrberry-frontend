@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Block = styled.section`
   padding: 0 .5rem;
@@ -39,20 +39,18 @@ const Link = styled.a`
   color: #171717;
 `;
 
-export default () => {
-  return (
-    <Block>
-      <div className="container">
-        <Heading>more for you</Heading>
-      </div>
+export default () => (
+  <Block>
+    <div className="container">
+      <Heading>more for you</Heading>
+    </div>
 
-      <div className="container">
-        <LinksWrap>
-          <Link href="/">Men’s Black Trench Coats</Link>
-          <Link href="/">Men’s Short Trench Coats</Link>
-          <Link href="/">Men’s Long Trench Coats</Link>
-        </LinksWrap>
-      </div>
-    </Block>
-  );
-};
+    <div className="container">
+      <LinksWrap>
+        <Link href="/">Men’s Black Trench Coats</Link>
+        <Link href="/">Men’s Short Trench Coats</Link>
+        <Link href="/">Men’s Long Trench Coats</Link>
+      </LinksWrap>
+    </div>
+  </Block>
+);

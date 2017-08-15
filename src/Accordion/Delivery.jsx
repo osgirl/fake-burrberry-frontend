@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import Heading from "./AccordionHeading";
-import { HiddenLg, VisibleLg } from "../common/Hidden";
+import React from 'react';
+import styled from 'styled-components';
+import Heading from './AccordionHeading';
+import { HiddenLg, VisibleLg } from '../common/Hidden';
 
 const Head = styled.section`
   border-top: 1px solid #c6c6c6;
@@ -60,45 +60,45 @@ const Text = styled.p`
   line-height: 1rem;
 `;
 
-export default () => {
-  return (
-    <div>
-      <HiddenLg>
-        <Head>
-          <div className="container">
-            <Heading>Delivery</Heading>
-          </div>
-        </Head>
-      </HiddenLg>
-      <Body>
+export default () => (
+  <div>
+    <HiddenLg>
+      <Head>
         <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-7">
-              <DeliveryImg src="img/delivery.jpg" alt="delivery image" />
-            </div>
+          <Heading>Delivery</Heading>
+        </div>
+      </Head>
+    </HiddenLg>
+    <Body>
+      <div className="container">
+        <div className="row">
+          <div className="col-xs-12 col-sm-7">
+            <DeliveryImg src="img/delivery.jpg" alt="delivery image" />
+          </div>
 
-            <div className="col-xs-12 col-sm-5 col-lg-4 col-lg-offset-1">
-              <Wrapper>
-                <VisibleLg>
-                  <BodyHeading>DELIVERY</BodyHeading>
-                </VisibleLg>
+          <div className="col-xs-12 col-sm-5 col-lg-4 col-lg-offset-1">
+            <Wrapper>
+              <VisibleLg>
+                <BodyHeading>DELIVERY</BodyHeading>
+              </VisibleLg>
 
-                <Bold>Free Next Day Delivery</Bold>
-                <Text>Order before 7pm Monday to Thursday for delivery the next day</Text>
+              <Bold>Free Next Day Delivery</Bold>
+              <Text>Order before 7pm Monday to Thursday for delivery the next day</Text>
 
-                <Bold>Collect-in-Store</Bold>
-                <Text>Order online today and pick up your items in store as early as tomorrow</Text>
+              <Bold>Collect-in-Store</Bold>
+              <Text>Order online today and pick up your items in store as early as tomorrow</Text>
 
-                <Bold>Free Returns</Bold>
-                <Text>Enjoy free returns on your order</Text>
+              <Bold>Free Returns</Bold>
+              <Text>Enjoy free returns on your order</Text>
 
-                <Bold>Free Gift Packaging</Bold>
-                <Text>Discover our gift packaging, a gold lined box tied with a coloured ribbon</Text>
-              </Wrapper>
-            </div>
+              <Bold>Free Gift Packaging</Bold>
+              <Text>
+                  Discover our gift packaging, a gold lined box tied with a coloured ribbon
+              </Text>
+            </Wrapper>
           </div>
         </div>
-      </Body>
-    </div>
-  );
-};
+      </div>
+    </Body>
+  </div>
+);

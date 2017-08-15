@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { FormattedNumber } from "react-intl";
+import React from 'react';
+import styled from 'styled-components';
+import { FormattedNumber } from 'react-intl';
 
 const Recommendations = styled.section`
   padding: 0 .5rem;
@@ -94,40 +94,72 @@ function RecommendationBlock(props) {
         {props.name}
       </Name>
       <Price>
-        <FormattedNumber style="currency" currency="RUB" maximumFractionDigits={0} minimumFractionDigits={0} value={props.price} currencyDisplay="symbol" />
+        <FormattedNumber
+          style="currency" // eslint-disable-line
+          currency="RUB"
+          maximumFractionDigits={0}
+          minimumFractionDigits={0}
+          value={props.price}
+          currencyDisplay="symbol"
+        />
       </Price>
     </AncorBlock>
   );
 }
 
-export default () => {
-  return (
-    <Recommendations>
+export default () =>
+  (<Recommendations>
+    <div className="container">
+      <Heading>we recommend</Heading>
+    </div>
+
+    <BlocksWrapper>
       <div className="container">
-        <Heading>we recommend</Heading>
-      </div>
+        <div className="row">
+          <div className="col-xs-6 col-sm-3">
+            <RecommendationBlock
+              link="/"
+              img="img/wr1.jpg"
+              alt="Emroided Hooded"
+              name="Emroided Hooded Content For Three Lines"
+              price={27000}
+              locale="ru"
+            />
+          </div>
 
-      <BlocksWrapper>
-        <div className="container">
-          <div className="row">
-            <div className="col-xs-6 col-sm-3">
-              <RecommendationBlock link="/" img="img/wr1.jpg" alt="Emroided Hooded" name="Emroided Hooded Content For Three Lines" price={27000} locale="ru" />
-            </div>
+          <div className="col-xs-6 col-sm-3">
+            <RecommendationBlock
+              link="/"
+              img="img/wr2.jpg"
+              alt="Relaxed Fit Stretch Jeans"
+              name="Relaxed Fit Stretch Jeans Content For Three Lines"
+              price={22500}
+              locale="ru"
+            />
+          </div>
 
-            <div className="col-xs-6 col-sm-3">
-              <RecommendationBlock link="/" img="img/wr2.jpg" alt="Relaxed Fit Stretch Jeans" name="Relaxed Fit Stretch Jeans Content For Three Lines" price={22500} locale="ru" />
-            </div>
+          <div className="col-xs-6 col-sm-3">
+            <RecommendationBlock
+              link="/"
+              img="img/wr3.jpg"
+              alt="Leather and House"
+              name="Leather and House Check Content For Three Lines"
+              price={120000}
+              locale="ru"
+            />
+          </div>
 
-            <div className="col-xs-6 col-sm-3">
-              <RecommendationBlock link="/" img="img/wr3.jpg" alt="Leather and House" name="Leather and House Check Content For Three Lines" price={120000} locale="ru" />
-            </div>
-
-            <div className="col-xs-6 col-sm-3">
-              <RecommendationBlock link="/" img="img/wr4.jpg" alt="Leather Wingtip" name="Leather Wingtip Check Content For Three Lines" price={46000} locale="ru" />
-            </div>
+          <div className="col-xs-6 col-sm-3">
+            <RecommendationBlock
+              link="/"
+              img="img/wr4.jpg"
+              alt="Leather Wingtip"
+              name="Leather Wingtip Check Content For Three Lines"
+              price={46000}
+              locale="ru"
+            />
           </div>
         </div>
-      </BlocksWrapper>
-    </Recommendations>
-  );
-};
+      </div>
+    </BlocksWrapper>
+  </Recommendations>);
