@@ -9,11 +9,8 @@ const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .5rem;
 
   @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
     border-bottom: 0;
   }
 `;
@@ -50,13 +47,13 @@ function FormattedPrice(props) {
 }
 
 FormattedPrice.propTypes = {
-  price: PropTypes.element.isRequired,
+  price: PropTypes.element.isRequired
 };
 
 export default () =>
-  (<Info>
+  <Info>
     <FormattedPrice price={110000} locale="ru" />
     <HiddenLg>
       <Code>Item 39428531</Code>
     </HiddenLg>
-  </Info>);
+  </Info>;

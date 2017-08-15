@@ -2,15 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const Colors = styled.div`
-  padding: 0 .5rem;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
-  }
-`;
+const Colors = styled.div`@media screen and (min-width: 48rem) {border-bottom: 0;}`;
 
 const ColorTxt = styled.p`
   margin-top: 0;
@@ -62,11 +54,11 @@ function ColorButton(props) {
 ColorButton.propTypes = {
   active: PropTypes.element.isRequired,
   color: PropTypes.element.isRequired,
-  name: PropTypes.element.isRequired,
+  name: PropTypes.element.isRequired
 };
 
 export default () =>
-  (<Colors>
+  <Colors>
     <ColorTxt>
       Colour: <b>Honey</b>
     </ColorTxt>
@@ -76,4 +68,4 @@ export default () =>
 
       <ColorButton active color="#cfa880" name="honey" />
     </ColorPanel>
-  </Colors>);
+  </Colors>;

@@ -3,20 +3,12 @@ import styled from 'styled-components';
 import { FormattedNumber } from 'react-intl';
 import PropTypes from 'prop-types';
 
-const Recommendations = styled.section`
-  padding: 0 .5rem;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
-  }
-`;
+const Recommendations = styled.section`@media screen and (min-width: 48rem) {border-bottom: 0;}`;
 
 const Heading = styled.h2`
   display: block;
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.1875rem;
@@ -113,11 +105,11 @@ RecommendationBlock.propTypes = {
   img: PropTypes.element.isRequired,
   alt: PropTypes.element.isRequired,
   name: PropTypes.element.isRequired,
-  price: PropTypes.element.isRequired,
+  price: PropTypes.element.isRequired
 };
 
 export default () =>
-  (<Recommendations>
+  <Recommendations>
     <div className="container">
       <Heading>we recommend</Heading>
     </div>
@@ -171,4 +163,4 @@ export default () =>
         </div>
       </div>
     </BlocksWrapper>
-  </Recommendations>);
+  </Recommendations>;

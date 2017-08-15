@@ -5,11 +5,8 @@ import { HiddenLg, VisibleLg } from '../common/Hidden';
 const Buttons = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 .5rem;
 
   @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
     border-bottom: 0;
   }
 
@@ -50,20 +47,19 @@ const SimpleButton = styled.button`
   }
 `;
 
-export default () => (
+export default () =>
   <Buttons>
     <HiddenLg>
       <SimpleButton primary type="button">
-          select size
+        select size
       </SimpleButton>
     </HiddenLg>
 
     <VisibleLg>
       <SimpleButton primary type="button">
-          Add to cart
+        Add to cart
       </SimpleButton>
     </VisibleLg>
 
     <SimpleButton type="button">find in store</SimpleButton>
-  </Buttons>
-);
+  </Buttons>;
