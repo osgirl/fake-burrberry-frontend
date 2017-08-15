@@ -54,11 +54,11 @@ function ColorButton(props) {
 ColorButton.propTypes = {
   active: PropTypes.element.isRequired,
   color: PropTypes.element.isRequired,
-  name: PropTypes.element.isRequired
+  name: PropTypes.element.isRequired,
 };
 
 export default () =>
-  <Colors>
+  (<Colors>
     <ColorTxt>
       Colour: <b>Honey</b>
     </ColorTxt>
@@ -68,4 +68,4 @@ export default () =>
 
       <ColorButton active color="#cfa880" name="honey" />
     </ColorPanel>
-  </Colors>;
+  </Colors>);

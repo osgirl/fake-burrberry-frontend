@@ -36,7 +36,7 @@ const Link = styled.a`
 `;
 
 export default () =>
-  <Block>
+  (<Block>
     <div className="container">
       <Heading>more for you</Heading>
     </div>
@@ -48,4 +48,4 @@ export default () =>
         <Link href="/">Men’s Long Trench Coats</Link>
       </LinksWrap>
     </div>
-  </Block>;
+  </Block>);

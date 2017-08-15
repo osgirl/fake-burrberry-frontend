@@ -105,11 +105,11 @@ RecommendationBlock.propTypes = {
   img: PropTypes.element.isRequired,
   alt: PropTypes.element.isRequired,
   name: PropTypes.element.isRequired,
-  price: PropTypes.element.isRequired
+  price: PropTypes.element.isRequired,
 };
 
 export default () =>
-  <Recommendations>
+  (<Recommendations>
     <div className="container">
       <Heading>we recommend</Heading>
     </div>
@@ -163,4 +163,4 @@ export default () =>
         </div>
       </div>
     </BlocksWrapper>
-  </Recommendations>;
+  </Recommendations>);

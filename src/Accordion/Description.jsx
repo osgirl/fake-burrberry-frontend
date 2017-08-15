@@ -76,7 +76,7 @@ function Gallery() {
 }
 
 export default () =>
-  <div className="container">
+  (<div className="container">
     <div className="row">
       <div className="col-sm-12 col-lg-4">
         <Head>
@@ -119,4 +119,4 @@ export default () =>
         <Gallery />
       </VisibleLg>
     </div>
-  </div>;
+  </div>);

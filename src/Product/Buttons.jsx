@@ -48,7 +48,7 @@ const SimpleButton = styled.button`
 `;
 
 export default () =>
-  <Buttons>
+  (<Buttons>
     <HiddenLg>
       <SimpleButton primary type="button">
         select size
@@ -62,4 +62,4 @@ export default () =>
     </VisibleLg>
 
     <SimpleButton type="button">find in store</SimpleButton>
-  </Buttons>;
+  </Buttons>);

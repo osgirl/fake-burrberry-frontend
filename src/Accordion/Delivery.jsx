@@ -70,7 +70,7 @@ const Text = styled.p`
 `;
 
 export default () =>
-  <div>
+  (<div>
     <HiddenLg>
       <Head>
         <div className="container">
@@ -107,4 +107,4 @@ export default () =>
         </div>
       </div>
     </Body>
-  </div>;
+  </div>);
