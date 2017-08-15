@@ -19,11 +19,11 @@ function VisibleLg({ children }) {
 }
 
 HiddenLg.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 
 VisibleLg.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 
 export { HiddenLg, VisibleLg };

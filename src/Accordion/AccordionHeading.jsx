@@ -61,7 +61,7 @@ function AccordionHeading({ children }) {
 }
 
 AccordionHeading.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.element.isRequired,
 };
 
 export default AccordionHeading;
