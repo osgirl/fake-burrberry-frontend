@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Colors = styled.div`
   padding: 0 .5rem;
@@ -58,10 +59,16 @@ function ColorButton(props) {
   );
 }
 
-export default () => (
-  <Colors>
+ColorButton.propTypes = {
+  active: PropTypes.element.isRequired,
+  color: PropTypes.element.isRequired,
+  name: PropTypes.element.isRequired,
+};
+
+export default () =>
+  (<Colors>
     <ColorTxt>
-        Colour: <b>Honey</b>
+      Colour: <b>Honey</b>
     </ColorTxt>
 
     <ColorPanel>
@@ -69,5 +76,4 @@ export default () => (
 
       <ColorButton active color="#cfa880" name="honey" />
     </ColorPanel>
-  </Colors>
-);
+  </Colors>);

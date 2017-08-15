@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { FormattedNumber } from 'react-intl';
 import Code from '../common/ProductCode';
 import { HiddenLg } from '../common/Hidden';
@@ -47,6 +48,10 @@ function FormattedPrice(props) {
     </Price>
   );
 }
+
+FormattedPrice.propTypes = {
+  price: PropTypes.element.isRequired,
+};
 
 export default () =>
   (<Info>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FormattedNumber } from 'react-intl';
+import PropTypes from 'prop-types';
 
 const Recommendations = styled.section`
   padding: 0 .5rem;
@@ -106,6 +107,14 @@ function RecommendationBlock(props) {
     </AncorBlock>
   );
 }
+
+RecommendationBlock.propTypes = {
+  link: PropTypes.element.isRequired,
+  img: PropTypes.element.isRequired,
+  alt: PropTypes.element.isRequired,
+  name: PropTypes.element.isRequired,
+  price: PropTypes.element.isRequired,
+};
 
 export default () =>
   (<Recommendations>

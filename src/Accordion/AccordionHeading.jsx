@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import triangle from '../assets/triangle.svg';
 
 const Button = styled.button`
@@ -49,7 +50,7 @@ const Heading = styled.h2`
   }
 `;
 
-export default function ({ children }) {
+function AccordionHeading({ children }) {
   return (
     <Button type="button">
       <Heading>
@@ -58,3 +59,9 @@ export default function ({ children }) {
     </Button>
   );
 }
+
+AccordionHeading.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default AccordionHeading;

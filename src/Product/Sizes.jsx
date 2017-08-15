@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { VisibleLg } from '../common/Hidden';
 import TextBtn from '../common/TextButton';
 
@@ -62,11 +63,20 @@ function SizeButton(props) {
   );
 }
 
-export default () => (
-  <Sizes>
+SizeButton.propTypes = {
+  active: PropTypes.bool,
+  name: PropTypes.element.isRequired,
+};
+
+SizeButton.defaultProps = {
+  active: true,
+};
+
+export default () =>
+  (<Sizes>
     <FlexBetween>
       <SizeTxt>
-          Size: <b>XL</b>
+        Size: <b>XL</b>
       </SizeTxt>
 
       <VisibleLg>
@@ -83,5 +93,4 @@ export default () => (
 
       <SizeButton active name="xl" />
     </SizePanel>
-  </Sizes>
-);
+  </Sizes>);
