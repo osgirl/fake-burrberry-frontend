@@ -16,15 +16,13 @@ const Nav = styled.div`
   }
 `;
 
-const ShippingButton = styled.button`
+const Shipping = styled.p`
   display: block;
+  margin: 0;
   margin-bottom: 1rem;
-  padding: 0;
-  border: 0;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
   line-height: 1rem;
-  background: none;
   color: #999999;
 
   @media screen and (min-width: 48rem) {
@@ -35,23 +33,14 @@ const ShippingButton = styled.button`
   }
 `;
 
-const LangButton = styled.button`
-  display: block;
-  margin-bottom: 1.5rem;
+const Language = Shipping.extend`margin-bottom: 1.5rem;`;
+
+const FooterButton = styled.button`
+  display: inline;
   padding: 0;
   border: 0;
-  font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
-  line-height: 1rem;
-  background: none;
-  color: #999999;
-
-  @media screen and (min-width: 48rem) {
-    display: inline-block;
-    margin-right: 1.2rem;
-    margin-bottom: 0;
-    line-height: 1.5rem;
-  }
+  background: 0;
+  color: #171717;
 `;
 
 const Help = styled.h4`
@@ -68,7 +57,7 @@ const Help = styled.h4`
   }
 `;
 
-const MoreAncor = styled.a`
+const MoreLink = styled.a`
   display: block;
   margin-bottom: 0;
   font-family: Lora, serif;
@@ -85,16 +74,20 @@ const MoreAncor = styled.a`
 `;
 
 export default () =>
-  (<Footer>
+  <Footer>
     <Nav>
       <FooterNav />
     </Nav>
 
     <div className="container">
-      <ShippingButton type="button">Shipping country: Russian Federation</ShippingButton>
-      <LangButton type="button">Language: English</LangButton>
+      <Shipping>
+        Shipping country: <FooterButton type="button">Russian Federation</FooterButton>
+      </Shipping>
+      <Language>
+        Language: <FooterButton type="button">English</FooterButton>
+      </Language>
 
       <Help>Need help?</Help>
-      <MoreAncor href="/">Find out more and contact us</MoreAncor>
+      <MoreLink href="/">Find out more and contact us</MoreLink>
     </div>
-  </Footer>);
+  </Footer>;
