@@ -65,15 +65,15 @@ function SizeButton(props) {
 
 SizeButton.propTypes = {
   active: PropTypes.bool,
-  name: PropTypes.element.isRequired,
+  name: PropTypes.element.isRequired
 };
 
 SizeButton.defaultProps = {
-  active: true,
+  active: true
 };
 
 export default () =>
-  (<Sizes>
+  <Sizes>
     <FlexBetween>
       <SizeTxt>
         Size: <b>XL</b>
@@ -93,4 +93,4 @@ export default () =>
 
       <SizeButton active name="xl" />
     </SizePanel>
-  </Sizes>);
+  </Sizes>;
