@@ -74,7 +74,7 @@ const MoreLink = styled.a`
 `;
 
 export default () =>
-  <Footer>
+  (<Footer>
     <Nav>
       <FooterNav />
     </Nav>
@@ -90,4 +90,4 @@ export default () =>
       <Help>Need help?</Help>
       <MoreLink href="/">Find out more and contact us</MoreLink>
     </div>
-  </Footer>;
+  </Footer>);
