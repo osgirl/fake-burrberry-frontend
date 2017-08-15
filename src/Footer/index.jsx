@@ -88,18 +88,14 @@ const MoreAncor = styled.a`
   }
 `;
 
-export default () => (
-  <Footer>
+export default () =>
+  (<Footer>
     <Nav>
       <FooterNav />
-    </Nav>
-
+    </Nav>{' '}
     <div className="container">
-      <ShippingButton type="button">Shipping country: Russian Federation</ShippingButton>
-      <LangButton type="button">Language: English</LangButton>
-
-      <Help>Need help?</Help>
-      <MoreAncor href="/">Find out more and contact us</MoreAncor>
-    </div>
-  </Footer>
-);
+      <ShippingButton type="button"> Shipping country: Russian Federation </ShippingButton>{' '}
+      <LangButton type="button"> Language: English </LangButton> <Help> Need help ? </Help>{' '}
+      <MoreAncor href="/"> Find out more and contact us </MoreAncor>{' '}
+    </div>{' '}
+  </Footer>);

@@ -32,8 +32,7 @@ const Text = styled.div`
   }
 `;
 
-export default () => (
-  <Heading>
+export default () =>
+  (<Heading>
     <Text>Long Cotton Gabardine Car Coat Coat Coat Coat Coat</Text>
-  </Heading>
-);
+  </Heading>);
