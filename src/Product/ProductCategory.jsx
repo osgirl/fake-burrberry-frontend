@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { VisibleMd } from '../common/Hidden';
 import ProductPreviewExtended from '../common/ProductPreviewExtended';
 
 const Heading = styled.h2`
@@ -9,6 +10,12 @@ const Heading = styled.h2`
   font-size: 1rem;
   line-height: 1.1875rem;
   font-weight: 400;
+
+  @media screen and (min-width: 48rem) {
+    margin: 3rem 0 2rem;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
 `;
 
 function Head(props) {
@@ -26,7 +33,7 @@ function ProductCategory(props) {
         {props.heading}
       </Head>
       <div className="row">
-        <div className="col-xs-6">
+        <div className="col-xs-6 col-md-3">
           <ProductPreviewExtended
             link="/"
             img="https://assets.burberry.com/is/image/Burberryltd/a2fa084eae958434c326685fc8ff19dfce9fe430.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
@@ -37,7 +44,7 @@ function ProductCategory(props) {
             price={1395}
           />
         </div>
-        <div className="col-xs-6">
+        <div className="col-xs-6 col-md-3">
           <ProductPreviewExtended
             link="/"
             img="https://assets.burberry.com/is/image/Burberryltd/fb6adea94455f2a73e97b5cf2d7811d9135dcbe2.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
@@ -48,7 +55,7 @@ function ProductCategory(props) {
             price={12500}
           />
         </div>
-        <div className="col-xs-6">
+        <div className="col-xs-6 col-md-3">
           <ProductPreviewExtended
             link="/"
             img="https://assets.burberry.com/is/image/Burberryltd/90dd344122ccf1884fce63c4fc775bd6baa7a11f.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
@@ -59,7 +66,7 @@ function ProductCategory(props) {
             price={27000}
           />
         </div>
-        <div className="col-xs-6">
+        <div className="col-xs-6 col-md-3">
           <ProductPreviewExtended
             link="/"
             img="https://assets.burberry.com/is/image/Burberryltd/995466e7e1113f3b2f6484ceb090072e1c9062dc.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
@@ -71,6 +78,54 @@ function ProductCategory(props) {
           />
         </div>
       </div>
+      <VisibleMd>
+        <div className="row">
+          <div className="col-xs-6 col-md-3">
+            <ProductPreviewExtended
+              link="/"
+              img="https://assets.burberry.com/is/image/Burberryltd/a2fa084eae958434c326685fc8ff19dfce9fe430.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
+              alt="The Westminster – Long Heritage Trench Coat"
+              fit="Regular fit"
+              name="The Westminster – Long Heritage Trench Coat"
+              colorsCount={3}
+              price={1395}
+            />
+          </div>
+          <div className="col-xs-6 col-md-3">
+            <ProductPreviewExtended
+              link="/"
+              img="https://assets.burberry.com/is/image/Burberryltd/fb6adea94455f2a73e97b5cf2d7811d9135dcbe2.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
+              alt="The Westminster – Long Heritage Trench Coat"
+              fit="Regular fit"
+              name="The Westminster – Long Heritage Trench Coat"
+              colorsCount={3}
+              price={12500}
+            />
+          </div>
+          <div className="col-xs-6 col-md-3">
+            <ProductPreviewExtended
+              link="/"
+              img="https://assets.burberry.com/is/image/Burberryltd/90dd344122ccf1884fce63c4fc775bd6baa7a11f.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
+              alt="The Westminster – Long Heritage Trench Coat"
+              fit="Regular fit"
+              name="The Westminster – Long Heritage Trench Coat"
+              colorsCount={3}
+              price={27000}
+            />
+          </div>
+          <div className="col-xs-6 col-md-3">
+            <ProductPreviewExtended
+              link="/"
+              img="https://assets.burberry.com/is/image/Burberryltd/995466e7e1113f3b2f6484ceb090072e1c9062dc.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505"
+              alt="The Westminster – Long Heritage Trench Coat"
+              fit="Regular fit"
+              name="The Westminster – Long Heritage Trench Coat"
+              colorsCount={3}
+              price={11000}
+            />
+          </div>
+        </div>
+      </VisibleMd>
     </div>
   );
 }

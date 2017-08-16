@@ -18,6 +18,30 @@ function VisibleLg({ children }) {
   );
 }
 
+function HiddenMd({ children }) {
+  return (
+    <Responsive maxWidth={767}>
+      {children}
+    </Responsive>
+  );
+}
+
+function VisibleMd({ children }) {
+  return (
+    <Responsive minWidth={768}>
+      {children}
+    </Responsive>
+  );
+}
+
+HiddenMd.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+VisibleMd.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
 HiddenLg.propTypes = {
   children: PropTypes.element.isRequired,
 };
@@ -26,4 +50,4 @@ VisibleLg.propTypes = {
   children: PropTypes.element.isRequired,
 };
 
-export { HiddenLg, VisibleLg };
+export { HiddenMd, VisibleMd, HiddenLg, VisibleLg };

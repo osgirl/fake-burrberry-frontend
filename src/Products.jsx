@@ -6,6 +6,8 @@ import Helmet from 'react-helmet';
 import Header from './Header';
 import Filters from './Filters';
 import ProductCategory from './Product/ProductCategory';
+import Divider from './common/Divider';
+import More from './Product/ShowMore';
 import Footer from './Footer';
 
 addLocaleData([...en, ...ru]);
@@ -20,7 +22,11 @@ export default () =>
       <Header />
       <Filters />
       <ProductCategory heading="Heritage Trench Coats" />
+      <div className="container">
+        <Divider />
+      </div>
       <ProductCategory heading="Single Breasted Trench Coats" />
+      <More viewed="8" summ="17" count="9" />
       <Footer />
     </div>
   </IntlProvider>);

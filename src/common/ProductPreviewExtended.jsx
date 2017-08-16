@@ -4,11 +4,9 @@ import { FormattedNumber } from 'react-intl';
 import PropTypes from 'prop-types';
 import like from '../assets/like.svg';
 
+const Wrapper = styled.div`margin-bottom: 3rem;`;
+
 const AncorBlock = styled.a`
-  box-sizing: border-box;
-  display: block;
-  flex-basis: 50%;
-  margin-bottom: 2rem;
   color: #171717;
   text-decoration: none;
 `;
@@ -43,11 +41,12 @@ const Like = styled.div`
 const Name = styled.h3`
   margin: .5rem 0;
   font-size: .75rem;
-  line-height: 1rem
-  font-weight: 600;
+  line-height: 1rem;
+  font-weight: 500;
 
   @media screen and (min-width: 48rem) {
-    line-height: 1.2;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
   }
 
   @media screen and (min-width: 62rem) {
@@ -65,7 +64,10 @@ const Colors = styled.p`
   line-height: 1rem;
 `;
 
-const ColorsCount = styled.span`text-decoration: underline;`;
+const ColorsCount = styled.span`
+  text-decoration: underline;
+  margin-left: .5rem;
+`;
 
 const Price = styled.h5`
   margin: 0;
@@ -77,8 +79,10 @@ const Price = styled.h5`
 
 function ProductPreviewExtended(props) {
   return (
-    <AncorBlock href={props.link}>
-      <Img src={props.img} alt={props.alt} />
+    <Wrapper>
+      <AncorBlock href={props.link}>
+        <Img src={props.img} alt={props.alt} />
+      </AncorBlock>
       <More>
         <Fit>
           {props.fit}
@@ -86,10 +90,17 @@ function ProductPreviewExtended(props) {
         <Like />
       </More>
       <Name>
-        {props.name}
+        <AncorBlock href={props.link}>
+          {props.name}
+        </AncorBlock>
       </Name>
       <Colors>
-        Available in <ColorsCount>{props.colorsCount} colors</ColorsCount>
+        Available in
+        <ColorsCount>
+          <AncorBlock href={props.link}>
+            {props.colorsCount} colors
+          </AncorBlock>
+        </ColorsCount>
       </Colors>
       <Price>
         <FormattedNumber
@@ -101,7 +112,7 @@ function ProductPreviewExtended(props) {
           currencyDisplay="symbol"
         />
       </Price>
-    </AncorBlock>
+    </Wrapper>
   );
 }
 

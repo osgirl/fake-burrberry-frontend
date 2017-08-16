@@ -6,6 +6,10 @@ const Toolbar = styled.div`
   display: flex;
   margin-right: -.5rem;
   overflow-x: scroll;
+
+  @media screen and (min-width: 48rem) {
+    margin-right: 0;
+  }
 `;
 
 const Button = styled.button`
@@ -29,6 +33,15 @@ const Button = styled.button`
     background-image: url(${Chevron});
     background-size: cover;
   }
+
+  @media screen and (min-width: 48rem) {
+    margin-right: 3rem;
+
+    &:last-child {
+      margin: 0;
+      margin-left: auto;
+    }
+  }
 `;
 
 const Caption = styled.p`
@@ -40,6 +53,10 @@ const Caption = styled.p`
   line-height: 1rem;
   white-space: nowrap;
   color: #171717;
+
+  @media screen and (min-width: 48rem) {
+    display: none;
+  }
 `;
 
 export default () =>
