@@ -5,6 +5,7 @@ import ru from 'react-intl/locale-data/ru';
 import Helmet from 'react-helmet';
 import Header from './Header';
 import Filters from './Filters';
+import ProductCategory from './Product/ProductCategory';
 import Footer from './Footer';
 
 addLocaleData([...en, ...ru]);
@@ -18,6 +19,8 @@ export default () =>
       </Helmet>
       <Header />
       <Filters />
+      <ProductCategory heading="Heritage Trench Coats" />
+      <ProductCategory heading="Single Breasted Trench Coats" />
       <Footer />
     </div>
   </IntlProvider>);
