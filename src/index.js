@@ -2,11 +2,11 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'normalize.css';
 import 'flexboxgrid2/dist/flexboxgrid.css';
-import App from './App';
-import './index.css';
+import 'normalize.css';
 import registerServiceWorker from './registerServiceWorker';
+import Products from './Products';
+import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Products />, document.getElementById('root'));
 registerServiceWorker();

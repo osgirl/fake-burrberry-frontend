@@ -88,8 +88,8 @@ const MoreAncor = styled.a`
   }
 `;
 
-export default () => (
-  <Footer>
+export default () =>
+  (<Footer>
     <Nav>
       <FooterNav />
     </Nav>
@@ -101,5 +101,4 @@ export default () => (
       <Help>Need help?</Help>
       <MoreAncor href="/">Find out more and contact us</MoreAncor>
     </div>
-  </Footer>
-);
+  </Footer>);
