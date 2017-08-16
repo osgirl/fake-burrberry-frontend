@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { HiddenLg, VisibleLg } from "../common/Hidden";
+import React from 'react';
+import styled from 'styled-components';
+import { HiddenLg, VisibleLg } from '../common/Hidden';
 
 const Buttons = styled.div`
   display: flex;
@@ -50,22 +50,20 @@ const SimpleButton = styled.button`
   }
 `;
 
-export default () => {
-  return (
-    <Buttons>
-      <HiddenLg>
-        <SimpleButton primary type="button">
+export default () => (
+  <Buttons>
+    <HiddenLg>
+      <SimpleButton primary type="button">
           select size
-        </SimpleButton>
-      </HiddenLg>
+      </SimpleButton>
+    </HiddenLg>
 
-      <VisibleLg>
-        <SimpleButton primary type="button">
+    <VisibleLg>
+      <SimpleButton primary type="button">
           Add to cart
-        </SimpleButton>
-      </VisibleLg>
+      </SimpleButton>
+    </VisibleLg>
 
-      <SimpleButton type="button">find in store</SimpleButton>
-    </Buttons>
-  );
-};
+    <SimpleButton type="button">find in store</SimpleButton>
+  </Buttons>
+);

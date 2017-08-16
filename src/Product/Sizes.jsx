@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { VisibleLg } from "../common/Hidden";
-import TextBtn from "../common/TextButton";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { VisibleLg } from '../common/Hidden';
+import TextBtn from '../common/TextButton';
 
 const Sizes = styled.div`
   display: none;
@@ -48,7 +49,7 @@ const Button = styled.button`
   line-height: 1rem;
   text-transform: uppercase;
   cursor: pointer;
-  font-weight: ${props => (props.active ? "700" : "400")};
+  font-weight: ${props => (props.active ? '700' : '400')};
   background-color: transparent;
 `;
 
@@ -62,28 +63,34 @@ function SizeButton(props) {
   );
 }
 
-export default () => {
-  return (
-    <Sizes>
-      <FlexBetween>
-        <SizeTxt>
-          Size: <b>XL</b>
-        </SizeTxt>
-
-        <VisibleLg>
-          <TextButton>NEED SIZE HELP?</TextButton>
-        </VisibleLg>
-      </FlexBetween>
-
-      <SizePanel>
-        <SizeButton name="s" />
-
-        <SizeButton name="m" />
-
-        <SizeButton name="l" />
-
-        <SizeButton active name="xl" />
-      </SizePanel>
-    </Sizes>
-  );
+SizeButton.propTypes = {
+  active: PropTypes.bool,
+  name: PropTypes.element.isRequired,
 };
+
+SizeButton.defaultProps = {
+  active: true,
+};
+
+export default () =>
+  (<Sizes>
+    <FlexBetween>
+      <SizeTxt>
+        Size: <b>XL</b>
+      </SizeTxt>
+
+      <VisibleLg>
+        <TextButton>NEED SIZE HELP?</TextButton>
+      </VisibleLg>
+    </FlexBetween>
+
+    <SizePanel>
+      <SizeButton name="s" />
+
+      <SizeButton name="m" />
+
+      <SizeButton name="l" />
+
+      <SizeButton active name="xl" />
+    </SizePanel>
+  </Sizes>);

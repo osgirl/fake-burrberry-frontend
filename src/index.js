@@ -1,10 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "normalize.css";
-import "flexboxgrid2";
-import App from "./App";
-import "./index.css";
-import registerServiceWorker from "./registerServiceWorker";
+/* eslint react/jsx-filename-extension: "off" */
 
-ReactDOM.render(<App />, document.getElementById("root"));
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'normalize.css';
+import 'flexboxgrid2/dist/flexboxgrid.css';
+import App from './App';
+import './index.css';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

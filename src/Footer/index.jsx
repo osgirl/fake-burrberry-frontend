@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import FooterNav from "./FooterNav";
+import React from 'react';
+import styled from 'styled-components';
+import FooterNav from './FooterNav';
 
 const Footer = styled.footer`
   padding: 2rem .5rem;
@@ -88,20 +88,18 @@ const MoreAncor = styled.a`
   }
 `;
 
-export default () => {
-  return (
-    <Footer>
-      <Nav>
-        <FooterNav />
-      </Nav>
+export default () => (
+  <Footer>
+    <Nav>
+      <FooterNav />
+    </Nav>
 
-      <div className="container">
-        <ShippingButton type="button">Shipping country: Russian Federation</ShippingButton>
-        <LangButton type="button">Language: English</LangButton>
+    <div className="container">
+      <ShippingButton type="button">Shipping country: Russian Federation</ShippingButton>
+      <LangButton type="button">Language: English</LangButton>
 
-        <Help>Need help?</Help>
-        <MoreAncor href="/">Find out more and contact us</MoreAncor>
-      </div>
-    </Footer>
-  );
-};
+      <Help>Need help?</Help>
+      <MoreAncor href="/">Find out more and contact us</MoreAncor>
+    </div>
+  </Footer>
+);

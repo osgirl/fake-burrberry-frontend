@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import Header from "../common/ProductHeader";
-import Slider from "./Slider";
-import Info from "./Info";
-import Color from "./Color";
-import Sizes from "./Sizes";
-import Btns from "./Buttons";
-import { HiddenLg, VisibleLg } from "../common/Hidden";
-import TextBtn from "../common/TextButton";
+import React from 'react';
+import styled from 'styled-components';
+import Header from '../common/ProductHeader';
+import Slider from './Slider';
+import Info from './Info';
+import Color from './Color';
+import Sizes from './Sizes';
+import Btns from './Buttons';
+import { HiddenLg, VisibleLg } from '../common/Hidden';
+import TextBtn from '../common/TextButton';
 
 const FlexWrapper = styled.div`
   @media screen and (min-width: 62rem) {
@@ -36,48 +36,46 @@ const Text = styled.p`
 
 const ColorWrapper = styled.div`@media screen and (min-width: 62rem) {background-color: #d4bdad;}`;
 
-export default () => {
-  return (
-    <ColorWrapper>
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <HiddenLg>
+export default () => (
+  <ColorWrapper>
+    <div className="container">
+      <div className="row">
+        <div className="col-xs-12">
+          <HiddenLg>
+            <Header />
+          </HiddenLg>
+        </div>
+
+        <div className="col-xs-12 col-sm-7 col-md-6">
+          <Slider />
+        </div>
+
+        <div className="col-xs-12 col-sm-5 col-md-6">
+          <FlexWrapper>
+            <VisibleLg>
               <Header />
-            </HiddenLg>
-          </div>
-
-          <div className="col-xs-12 col-sm-7 col-md-6">
-            <Slider />
-          </div>
-
-          <div className="col-xs-12 col-sm-5 col-md-6">
-            <FlexWrapper>
-              <VisibleLg>
-                <Header />
-              </VisibleLg>
-              <Info />
-              <div className="row">
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                  <Color />
-                </div>
-                <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
-                  <Sizes />
-                </div>
+            </VisibleLg>
+            <Info />
+            <div className="row">
+              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <Color />
               </div>
-              <Btns />
+              <div className="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                <Sizes />
+              </div>
+            </div>
+            <Btns />
 
-              <HiddenLg>
-                <TextBtn>NEED SIZE HELP?</TextBtn>
-              </HiddenLg>
-              <VisibleLg>
-                <Bold>Free Next Day Delivery</Bold>
-                <Text>Order before 7pm Monday to Thursday for delivery the next day</Text>
-              </VisibleLg>
-            </FlexWrapper>
-          </div>
+            <HiddenLg>
+              <TextBtn>NEED SIZE HELP?</TextBtn>
+            </HiddenLg>
+            <VisibleLg>
+              <Bold>Free Next Day Delivery</Bold>
+              <Text>Order before 7pm Monday to Thursday for delivery the next day</Text>
+            </VisibleLg>
+          </FlexWrapper>
         </div>
       </div>
-    </ColorWrapper>
-  );
-};
+    </div>
+  </ColorWrapper>
+);

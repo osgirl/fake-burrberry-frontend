@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Colors = styled.div`
   padding: 0 .5rem;
@@ -58,18 +59,21 @@ function ColorButton(props) {
   );
 }
 
-export default () => {
-  return (
-    <Colors>
-      <ColorTxt>
-        Colour: <b>Honey</b>
-      </ColorTxt>
-
-      <ColorPanel>
-        <ColorButton color="#232122" name="black" />
-
-        <ColorButton active color="#cfa880" name="honey" />
-      </ColorPanel>
-    </Colors>
-  );
+ColorButton.propTypes = {
+  active: PropTypes.element.isRequired,
+  color: PropTypes.element.isRequired,
+  name: PropTypes.element.isRequired,
 };
+
+export default () =>
+  (<Colors>
+    <ColorTxt>
+      Colour: <b>Honey</b>
+    </ColorTxt>
+
+    <ColorPanel>
+      <ColorButton color="#232122" name="black" />
+
+      <ColorButton active color="#cfa880" name="honey" />
+    </ColorPanel>
+  </Colors>);

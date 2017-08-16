@@ -1,8 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Code from "../common/ProductCode";
-import { HiddenLg } from "../common/Hidden";
-import { FormattedNumber } from "react-intl";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { FormattedNumber } from 'react-intl';
+import Code from '../common/ProductCode';
+import { HiddenLg } from '../common/Hidden';
 
 const Info = styled.div`
   display: flex;
@@ -36,18 +37,26 @@ const Price = styled.h2`
 function FormattedPrice(props) {
   return (
     <Price>
-      <FormattedNumber style="currency" currency="RUB" maximumFractionDigits={0} minimumFractionDigits={0} value={props.price} currencyDisplay="symbol" />
+      <FormattedNumber
+        style="currency" // eslint-disable-line
+        currency="RUB"
+        maximumFractionDigits={0}
+        minimumFractionDigits={0}
+        value={props.price}
+        currencyDisplay="symbol"
+      />
     </Price>
   );
 }
 
-export default () => {
-  return (
-    <Info>
-      <FormattedPrice price={110000} locale="ru" />
-      <HiddenLg>
-        <Code>Item 39428531</Code>
-      </HiddenLg>
-    </Info>
-  );
+FormattedPrice.propTypes = {
+  price: PropTypes.element.isRequired,
 };
+
+export default () =>
+  (<Info>
+    <FormattedPrice price={110000} locale="ru" />
+    <HiddenLg>
+      <Code>Item 39428531</Code>
+    </HiddenLg>
+  </Info>);
