@@ -61,11 +61,11 @@ const Caption = styled.p`
 `;
 
 export default () =>
-  <Toolbar>
+  (<Toolbar>
     <Caption>Refine by</Caption>
 
     <Button type="button">Category</Button>
     <Button type="button">Colour</Button>
     <Button type="button">Size</Button>
     <Button type="button">Sort by price</Button>
-  </Toolbar>;
+  </Toolbar>);
