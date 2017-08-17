@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.hr`
-  margin: 0;
-  color: #c6c6c6;
+  display: block;
+  border: 0;
+  border-top: 1px solid #c6c6c6;
 `;

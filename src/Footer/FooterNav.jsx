@@ -25,8 +25,21 @@ const Link = styled.a`
   }
 `;
 
-export default () => (
-  <div className="container">
+const Img = styled.img`
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+`;
+
+const Ancor = styled.a`
+  color: #171717;
+  font-size: .75rem;
+  line-height: 1rem;
+  font-weight: 600;
+`;
+
+export default () =>
+  (<div className="container">
     <div className="row">
       <div className="col-md-3">
         <nav>
@@ -63,6 +76,13 @@ export default () => (
           <Link href="/">Japan Only - SCTL indications</Link>
         </nav>
       </div>
+
+      <div className="col-md-3">
+        <Ancor href="/">
+          <Img src="//assets.burberry.com/is/image/Burberryltd/933f04c94a361dfd816c77528ec0e7286921051b.jpg?$BBY_V2_BASIC$&wid=563" />{' '}
+          {'// eslint-disable-line'}
+        </Ancor>
+        <Ancor href="/">Find a store</Ancor>
+      </div>
     </div>
-  </div>
-);
+  </div>);

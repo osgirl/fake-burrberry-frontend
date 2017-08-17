@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom';
 import 'flexboxgrid2/dist/flexboxgrid.css';
 import 'normalize.css';
 import registerServiceWorker from './registerServiceWorker';
-import Product from './Product';
+import ProductList from './ProductList';
 import './index.css';
 
-ReactDOM.render(<Product />, document.getElementById('root'));
+ReactDOM.render(<ProductList />, document.getElementById('root'));
 registerServiceWorker();

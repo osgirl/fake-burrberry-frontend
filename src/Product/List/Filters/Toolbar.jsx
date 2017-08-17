@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Chevron from '../../../assets/arrow.svg';
+import chevron from '../../../assets/arrow.svg';
 
 const Toolbar = styled.div`
   display: flex;
@@ -24,6 +24,7 @@ const Button = styled.button`
   white-space: nowrap;
   background: transparent;
   color: #171717;
+  cursor: pointer;
 
   &:after {
     content: "";
@@ -31,13 +32,17 @@ const Button = styled.button`
     width: 13px;
     height: 6px;
     margin-left: .5rem;
-    background-image: url(${Chevron});
+    background-image: url(${chevron});
     background-size: cover;
   }
 
   @media screen and (min-width: 48rem) {
     margin-right: 3rem;
+  }
+`;
 
+const ButtonAlignedRight = Button.extend`
+  @media screen and (min-width: 48rem) {
     &:last-child {
       margin: 0;
       margin-left: auto;
@@ -67,5 +72,5 @@ export default () =>
     <Button type="button">Category</Button>
     <Button type="button">Colour</Button>
     <Button type="button">Size</Button>
-    <Button type="button">Sort by price</Button>
+    <ButtonAlignedRight type="button">Sort by price</ButtonAlignedRight>
   </Toolbar>);
