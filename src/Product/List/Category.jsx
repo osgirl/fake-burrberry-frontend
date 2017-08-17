@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { VisibleMd } from '../common/Hidden';
-import ProductPreviewExtended from '../common/ProductPreviewExtended';
+import { VisibleMd } from '../../common/Responsive';
+import ProductPreviewExtended from '../Preview';
 
 const Heading = styled.h2`
   margin: 2rem 0 1rem;

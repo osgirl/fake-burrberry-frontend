@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Heading from './AccordionHeading';
-import { HiddenLg, VisibleLg } from '../common/Hidden';
+import { HiddenLg, VisibleLg } from '../../../common/Responsive';
 
 const Head = styled.section`
   margin: 0 -.5rem;

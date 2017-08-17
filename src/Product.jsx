@@ -4,13 +4,13 @@ import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
 import Helmet from 'react-helmet';
 import Header from './Header';
-import Product from './Product';
+import Product from './Product/View';
 import Footer from './Footer';
 
 addLocaleData([...en, ...ru]);
 
-export default () => (
-  <IntlProvider locale="ru">
+export default () =>
+  (<IntlProvider locale="ru">
     <div>
       <Helmet>
         <title>Long Cotton Gabardine Car Coat | Men - Burberry</title>
@@ -20,5 +20,4 @@ export default () => (
       <Product />
       <Footer />
     </div>
-  </IntlProvider>
-);
+  </IntlProvider>);

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Chevron from '../assets/arrow.svg';
+import Chevron from '../../../assets/arrow.svg';
 
 const Toolbar = styled.div`
   display: flex;
