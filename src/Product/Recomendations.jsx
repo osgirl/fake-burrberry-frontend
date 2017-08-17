@@ -2,20 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import RecommendationBlock from '../common/ProductPreview';
 
-const Recommendations = styled.section`
-  padding: 0 .5rem;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
-  }
-`;
+const Recommendations = styled.section`@media screen and (min-width: 48rem) {border-bottom: 0;}`;
 
 const Heading = styled.h2`
   display: block;
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.1875rem;
