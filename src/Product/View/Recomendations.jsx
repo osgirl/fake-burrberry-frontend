@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import RecommendationBlock from '../common/ProductPreview';
+import RecommendationBlock from '../Preview';
 
 const Recommendations = styled.section`
   padding: 0 .5rem;
