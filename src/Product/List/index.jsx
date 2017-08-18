@@ -5,7 +5,7 @@ import More from './ShowMore';
 import Divider from '../../common/Divider';
 
 export default () =>
-  <main>
+  (<main>
     <Filters />
     <ProductCategory heading="Heritage Trench Coats" />
     <div className="container">
@@ -13,4 +13,4 @@ export default () =>
     </div>
     <ProductCategory heading="Single Breasted Trench Coats" />
     <More viewed="8" summ="17" count="9" />
-  </main>;
+  </main>);
