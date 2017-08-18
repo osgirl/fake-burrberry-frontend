@@ -123,7 +123,7 @@ const MobileIcon = styled.button`
 `;
 
 export default () =>
-  <Wrapper>
+  (<Wrapper>
     <div className="container">
       <Header>
         <MobileIcon />
@@ -144,4 +144,4 @@ export default () =>
       <NavLink to="/">BEAUTY</NavLink>
       <NavLink to="/">EXPERIENCE</NavLink>
     </Nav>
-  </Wrapper>;
+  </Wrapper>);
