@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SimpleButton as Button } from '../Button';
+import SimpleButton from '../Button';
 import { HiddenLg, VisibleLg } from '../../common/Responsive';
 
 const Buttons = styled.div`
@@ -15,16 +15,16 @@ const Buttons = styled.div`
 export default () =>
   (<Buttons>
     <HiddenLg>
-      <Button primary type="button">
+      <SimpleButton primary type="button">
         SELECT SIZE
-      </Button>
+      </SimpleButton>
     </HiddenLg>
 
     <VisibleLg>
-      <Button primary type="button">
+      <SimpleButton primary type="button">
         ADD TO CART
-      </Button>
+      </SimpleButton>
     </VisibleLg>
 
-    <Button type="button">FIND IN STORE</Button>
+    <SimpleButton type="button">FIND IN STORE</SimpleButton>
   </Buttons>);

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link as RouterLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import chevron from '../assets/arrow.svg';
 import burger from '../assets/hamburger.svg';
@@ -27,16 +28,6 @@ const Shipping = styled.p`
     line-height: 1rem;
     font-weight: 600;
     color: #999;
-
-    &:after {
-      content: "";
-      display: block;
-      width: 13px;
-      height: 7px;
-      margin-left: .5rem;
-      background-image: url(${chevron});
-      background-size: cover;
-    }
   }
 `;
 
@@ -51,9 +42,19 @@ const ShippingButton = styled.button`
   color: #999;
   background: transparent;
   cursor: pointer;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 6px;
+    margin-left: .5rem;
+    background-image: url(${chevron});
+    background-size: cover;
+  }
 `;
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
   display: block;
   line-height: 0;
 `;
@@ -130,18 +131,18 @@ export default () =>
         <Shipping>
           Shopping in: <ShippingButton>United Kingdom (£)</ShippingButton>
         </Shipping>
-        <Link href="/">
+        <Link to="/">
           <Logo src={logo} alt="Burberry logo" />
         </Link>
       </Header>
     </div>
     <Nav>
-      <NavLink href="/">WOMEN</NavLink>
-      <NavLink active href="/">
+      <NavLink to="/">WOMEN</NavLink>
+      <NavLink active to="/">
         MEN
       </NavLink>
-      <NavLink href="/">CHILDREN</NavLink>
-      <NavLink href="/">BEAUTY</NavLink>
-      <NavLink href="/">EXPERIENCE</NavLink>
+      <NavLink to="/">CHILDREN</NavLink>
+      <NavLink to="/">BEAUTY</NavLink>
+      <NavLink to="/">EXPERIENCE</NavLink>
     </Nav>
   </Wrapper>);
