@@ -2,13 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import { FormattedNumber } from 'react-intl';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import like from '../assets/like.svg';
 
-const AncorBlock = styled.a`
-  box-sizing: border-box;
-  display: block;
-  flex-basis: 50%;
-  margin-bottom: 2rem;
+const Wrapper = styled.div`margin-bottom: 3rem;`;
+
+const AncorBlock = styled(Link)`
   color: #171717;
   text-decoration: none;
 `;
@@ -77,8 +76,10 @@ const Price = styled.h5`
 
 function ProductPreviewExtended(props) {
   return (
-    <AncorBlock href={props.link}>
-      <Img src={props.img} alt={props.alt} />
+    <Wrapper>
+      <AncorBlock to={props.link}>
+        <Img src={props.img} alt={props.alt} />
+      </AncorBlock>
       <More>
         <Fit>
           {props.fit}
@@ -86,10 +87,17 @@ function ProductPreviewExtended(props) {
         <Like />
       </More>
       <Name>
-        {props.name}
+        <AncorBlock to={props.link}>
+          {props.name}
+        </AncorBlock>
       </Name>
       <Colors>
-        Available in <ColorsCount>{props.colorsCount} colors</ColorsCount>
+        Available in
+        <ColorsCount>
+          <AncorBlock to={props.link}>
+            {props.colorsCount} colors
+          </AncorBlock>
+        </ColorsCount>
       </Colors>
       <Price>
         <FormattedNumber
@@ -101,7 +109,7 @@ function ProductPreviewExtended(props) {
           currencyDisplay="symbol"
         />
       </Price>
-    </AncorBlock>
+    </Wrapper>
   );
 }
 
