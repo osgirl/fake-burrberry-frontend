@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../common/ProductHeader';
+import Header from './Header';
 import Slider from './Slider';
 import Info from './Info';
 import Color from './Color';
 import Sizes from './Sizes';
 import Btns from './Buttons';
-import { HiddenLg, VisibleLg } from '../common/Hidden';
-import TextBtn from '../common/TextButton';
+import { HiddenLg, VisibleLg } from '../../common/Responsive';
+import TextBtn from '../../common/TextButton';
 
 const FlexWrapper = styled.div`
   @media screen and (min-width: 62rem) {
@@ -36,8 +36,8 @@ const Text = styled.p`
 
 const ColorWrapper = styled.div`@media screen and (min-width: 62rem) {background-color: #d4bdad;}`;
 
-export default () => (
-  <ColorWrapper>
+export default () =>
+  (<ColorWrapper>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
@@ -77,5 +77,4 @@ export default () => (
         </div>
       </div>
     </div>
-  </ColorWrapper>
-);
+  </ColorWrapper>);

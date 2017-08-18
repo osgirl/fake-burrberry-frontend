@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import Heading from './AccordionHeading';
-import { HiddenLg, VisibleLg } from '../common/Hidden';
+import { HiddenLg, VisibleLg } from '../../../common/Responsive';
 
 const Head = styled.section`
+  margin: 0 -.5rem;
   border-top: 1px solid #c6c6c6;
   @media screen and (min-width: 48rem) {
     padding: 0;
+    margin: 0;
   }
 `;
 
@@ -20,10 +22,13 @@ const Body = styled.div`
 `;
 
 const DeliveryImg = styled.img`
-  display: block;
+  display: none;
   width: 100%;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  @media screen and (min-width: 62rem) {
+    display: block;
+  }
 `;
 
 const BodyHeading = styled.h2`
@@ -36,6 +41,10 @@ const BodyHeading = styled.h2`
 `;
 
 const Wrapper = styled.div`
+  margin: 0 -.5rem;
+  @media screen and (min-width: 48rem) {
+    margin: 0;
+  }
   @media screen and (min-width: 62rem) {
     height: 100%;
     display: flex;
@@ -60,8 +69,8 @@ const Text = styled.p`
   line-height: 1rem;
 `;
 
-export default () => (
-  <div>
+export default () =>
+  (<div>
     <HiddenLg>
       <Head>
         <div className="container">
@@ -92,13 +101,10 @@ export default () => (
               <Text>Enjoy free returns on your order</Text>
 
               <Bold>Free Gift Packaging</Bold>
-              <Text>
-                  Discover our gift packaging, a gold lined box tied with a coloured ribbon
-              </Text>
+              <Text>Discover our gift packaging, a gold lined box tied with a coloured ribbon</Text>
             </Wrapper>
           </div>
         </div>
       </div>
     </Body>
-  </div>
-);
+  </div>);

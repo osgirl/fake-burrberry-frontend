@@ -4,7 +4,7 @@ import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
 import Helmet from 'react-helmet';
 import Header from './Header';
-import Filters from './Filters';
+import ProductList from './Product/List';
 import Footer from './Footer';
 
 addLocaleData([...en, ...ru]);
@@ -17,7 +17,7 @@ export default () =>
         <meta name="description" content="Men's clothing | Burberry" />
       </Helmet>
       <Header />
-      <Filters />
+      <ProductList />
       <Footer />
     </div>
   </IntlProvider>);

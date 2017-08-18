@@ -1,13 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Heading from './AccordionHeading';
-import { VisibleLg } from '../common/Hidden';
+import { VisibleLg } from '../../../common/Responsive';
 
 const Head = styled.section`
   border-top: 1px solid #c6c6c6;
+  margin: 0 -.5rem;
   @media screen and (min-width: 48rem) {
     padding: 0;
     border: 0;
+    margin: 0;
   }
 `;
 
@@ -55,44 +57,46 @@ const GalleryImg = styled.img`
   width: 100%;
 `;
 
-const Gallery = () => (
-  <Wrapper className="container">
-    <div className="row">
-      <div className="col-lg-4">
-        <GalleryImg src="img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
+function Gallery() {
+  return (
+    <Wrapper className="container">
+      <div className="row">
+        <div className="col-lg-4">
+          <GalleryImg src="img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
+        </div>
+        <div className="col-lg-4">
+          <GalleryImg src="img/img2@2x.jpg" alt="Long Cotton Gabardine Coat" />
+        </div>
+        <div className="col-lg-4">
+          <GalleryImg src="img/img3@2x.jpg" alt="Long Cotton Gabardine Coat" />
+        </div>
       </div>
-      <div className="col-lg-4">
-        <GalleryImg src="img/img2@2x.jpg" alt="Long Cotton Gabardine Coat" />
-      </div>
-      <div className="col-lg-4">
-        <GalleryImg src="img/img3@2x.jpg" alt="Long Cotton Gabardine Coat" />
-      </div>
-    </div>
-  </Wrapper>
-);
+    </Wrapper>
+  );
+}
 
-export default () => (
-  <div className="container">
+export default () =>
+  (<div className="container">
     <div className="row">
       <div className="col-sm-12 col-lg-4">
         <Head>
-          <Heading>Description</Heading>
+          <div className="container">
+            <Heading>Description</Heading>
+          </div>
         </Head>
 
         <Body>
           <p>A refined car coat crafted in protective cotton gabardine.</p>
           <p>
-              Invented by Thomas Burberry in 1879, cotton gabardine is a tightly woven and
-              breathable fabric that protects against wind and rain.
+            Invented by Thomas Burberry in 1879, cotton gabardine is a tightly woven and breathable
+            fabric that protects against wind and rain.
           </p>
-          <p>
-              Raglan sleeves and a concealed button closure complement the clean tailored lines.
-          </p>
+          <p>Raglan sleeves and a concealed button closure complement the clean tailored lines.</p>
           <p>The piece is finished with a distinctive check undercollar.</p>
           <br />
           <p>
-              Coat length: 98cm/38.6in. This is based on a size UK 48 as proportions change slightly
-              according to size.
+            Coat length: 98cm/38.6in. This is based on a size UK 48 as proportions change slightly
+            according to size.
           </p>
 
           <ul>
@@ -115,5 +119,4 @@ export default () => (
         <Gallery />
       </VisibleLg>
     </div>
-  </div>
-);
+  </div>);
