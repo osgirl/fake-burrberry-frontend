@@ -8,7 +8,7 @@ const ColorTxt = styled.p`
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: .75rem;
-  line-height: 0.9375rem;
+  line-height: 1rem;
 `;
 
 const ColorPanel = styled.div`

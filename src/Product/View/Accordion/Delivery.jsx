@@ -1,28 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 import Heading from './AccordionHeading';
-import { HiddenLg, VisibleLg } from '../../../common/Responsive';
+import { HiddenMd, VisibleMd } from '../../../common/Responsive';
 
 const Head = styled.section`
   border-top: 1px solid #c6c6c6;
+  margin: 0 -.5rem;
+  padding: 0 .5rem;
   @media screen and (min-width: 25rem) {
     border: 0;
+    margin: 0;
+    padding: 0;
   }
 `;
-const Body = styled.div`
-  padding-bottom: 2rem;
-
-  @media screen and (min-width: 48rem) {
-    display: block;
-    padding-bottom: 1.5rem;
-  }
-`;
+const Body = styled.div`padding-bottom: 2rem;`;
 
 const DeliveryImg = styled.img`
-  display: block;
-  width: 100%;
-  margin-bottom: 1rem;
+  display: none;
   margin-top: 1rem;
+  @media screen and (min-width: 48rem) {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
 `;
 
 const BodyHeading = styled.h2`
@@ -60,43 +61,37 @@ const Text = styled.p`
 `;
 
 export default () =>
-  (<div>
-    <HiddenLg>
-      <Head>
-        <div className="container">
+  (<Body>
+    <div className="container">
+      <HiddenMd>
+        <Head>
           <Heading>Delivery</Heading>
+        </Head>
+      </HiddenMd>
+      <div className="row">
+        <div className="col-xs-12 col-md-7">
+          <DeliveryImg src="img/delivery.jpg" alt="delivery image" />
         </div>
-      </Head>
-    </HiddenLg>
-    <Body>
-      <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-sm-7">
-            <DeliveryImg src="img/delivery.jpg" alt="delivery image" />
-          </div>
 
-          <div className="col-xs-12 col-sm-5 col-lg-4 col-lg-offset-1">
-            <Wrapper>
-              <VisibleLg>
-                <div className="container">
-                  <BodyHeading>DELIVERY</BodyHeading>
-                </div>
-              </VisibleLg>
+        <div className="col-xs-12 col-md-5 col-lg-4 col-lg-offset-1">
+          <Wrapper>
+            <VisibleMd>
+              <BodyHeading>DELIVERY</BodyHeading>
+            </VisibleMd>
 
-              <Bold>Free Next Day Delivery</Bold>
-              <Text>Order before 7pm Monday to Thursday for delivery the next day</Text>
+            <Bold>Free Next Day Delivery</Bold>
+            <Text>Order before 7pm Monday to Thursday for delivery the next day</Text>
 
-              <Bold>Collect-in-Store</Bold>
-              <Text>Order online today and pick up your items in store as early as tomorrow</Text>
+            <Bold>Collect-in-Store</Bold>
+            <Text>Order online today and pick up your items in store as early as tomorrow</Text>
 
-              <Bold>Free Returns</Bold>
-              <Text>Enjoy free returns on your order</Text>
+            <Bold>Free Returns</Bold>
+            <Text>Enjoy free returns on your order</Text>
 
-              <Bold>Free Gift Packaging</Bold>
-              <Text>Discover our gift packaging, a gold lined box tied with a coloured ribbon</Text>
-            </Wrapper>
-          </div>
+            <Bold>Free Gift Packaging</Bold>
+            <Text>Discover our gift packaging, a gold lined box tied with a coloured ribbon</Text>
+          </Wrapper>
         </div>
       </div>
-    </Body>
-  </div>);
+    </div>
+  </Body>);

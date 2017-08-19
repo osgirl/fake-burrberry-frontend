@@ -7,7 +7,7 @@ const Recommendations = styled.section``;
 const Heading = styled.h2`
   display: block;
   margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.1875rem;
@@ -19,8 +19,8 @@ const Heading = styled.h2`
     line-height: 1.1875rem;
   }
 
-  @media screen and (min-width: 48rem) {
-    margin-top: 1.5rem;
+  @media screen and (min-width: 62rem) {
+    margin-top: 1rem;
     margin-bottom: 2rem;
     text-align: center;
   }
@@ -32,7 +32,7 @@ const BlocksWrapper = styled.div`
   flex-flow: row wrap;
 
   @media screen and (min-width: 48rem) {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 `;
 

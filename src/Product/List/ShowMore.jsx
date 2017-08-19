@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
+  margin-top: 2rem;
   margin-bottom: 5rem;
   text-align: center;
 `;
@@ -26,8 +27,8 @@ const Button = styled.button`
   margin: 0 auto;
   font-size: .75rem;
   line-height: 1rem;
-  color: #171717;
   border: 1px solid #171717;
+  color: #171717;
   background-color: transparent;
 `;
 

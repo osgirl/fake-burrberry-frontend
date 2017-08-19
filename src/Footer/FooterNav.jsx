@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { VisibleLg } from '../common/Responsive';
 
 const NavHeading = styled.nav`
   @media screen and (min-width: 48rem) {
@@ -78,12 +79,15 @@ export default () =>
       </div>
 
       <div className="col-md-3">
-        <Ancor href="/">
-          <Img // eslint-disable-next-line max-len
-            src="//assets.burberry.com/is/image/Burberryltd/933f04c94a361dfd816c77528ec0e7286921051b.jpg?$BBY_V2_BASIC$&wid=563"
-          />
-        </Ancor>
-        <Ancor href="/">Find a store</Ancor>
+        <VisibleLg>
+          <Ancor href="/">
+            <Img // eslint-disable-next-line max-len
+              src="//assets.burberry.com/is/image/Burberryltd/933f04c94a361dfd816c77528ec0e7286921051b.jpg?$BBY_V2_BASIC$&wid=563"
+              alt="Find a store"
+            />
+          </Ancor>
+          <Ancor href="/">Find a store</Ancor>
+        </VisibleLg>
       </div>
     </div>
   </div>);

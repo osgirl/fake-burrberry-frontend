@@ -24,6 +24,9 @@ const Caption = styled.p`
   margin-bottom: .5rem;
   font-size: .75rem;
   line-height: 1.25rem;
+  @media screen and (min-width: 48rem) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const Link = styled.a`
@@ -48,7 +51,7 @@ CaptionLink.propTypes = {
 export default () =>
   (<Filters>
     <div className="container">
-      <Heading>Men&apos;s clothing</Heading>
+      <Heading>Men&apos;s Clothing</Heading>
       <div className="row">
         <div className="col-xs-12 col-md-9 col-lg-7">
           <Caption>

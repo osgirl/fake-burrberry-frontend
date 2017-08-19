@@ -28,7 +28,7 @@ const SizeTxt = styled.p`
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: .75rem;
-  line-height: 0.9375rem;
+  line-height: 1rem;
 `;
 
 const SizePanel = styled.div`
@@ -45,6 +45,7 @@ const Button = styled.button`
   margin-right: .5rem;
   border: 1px solid #171717;
   border-radius: 2px;
+  font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
   font-weight: 400;
   line-height: 1rem;

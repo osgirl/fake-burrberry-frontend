@@ -11,6 +11,7 @@ const Heading = styled.h2`
   font-weight: 400;
 
   @media screen and (min-width: 48rem) {
+    margin: 4rem 0 2rem;
     font-size: 1.25rem;
     line-height: 1.5rem;
   }

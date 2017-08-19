@@ -22,7 +22,7 @@ export default () =>
 
     <VisibleLg>
       <SimpleButton primary type="button">
-        ADD TO CART
+        ADD TO BAG
       </SimpleButton>
     </VisibleLg>
 

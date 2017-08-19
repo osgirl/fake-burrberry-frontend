@@ -28,7 +28,6 @@ const Bold = styled.h4`
 
 const Text = styled.p`
   margin: 0;
-  margin-bottom: 1.5rem;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
   line-height: 1rem;

@@ -65,6 +65,7 @@ const Logo = styled.img`
   margin: 1.125rem auto;
 
   @media screen and (min-width: 48rem) {
+    height: 1rem;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
   }

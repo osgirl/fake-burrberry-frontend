@@ -56,7 +56,7 @@ const Name = styled.h3`
 
   @media screen and (min-width: 62rem) {
     font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-    font-size: .75rem;
+    font-size: 1rem;
     line-height: 1.25rem;
   }
 `;
@@ -78,7 +78,6 @@ const Price = styled.h5`
   font-size: .75rem;
   line-height: .875rem;
   font-weight: 400;
-  color: #999;
 `;
 
 function Preview(props) {
