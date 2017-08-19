@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import like from '../assets/like.svg';
 
-const Wrapper = styled.div`margin-bottom: 3rem;`;
+const Wrapper = styled.div`margin-bottom: 2rem;`;
 
 const AncorBlock = styled(Link)`
   color: #171717;
@@ -46,18 +46,18 @@ const Like = styled.button`
 const Name = styled.h3`
   margin: .5rem 0;
   font-size: .75rem;
-  line-height: 1rem
+  line-height: 1rem;
   font-weight: 600;
 
   @media screen and (min-width: 48rem) {
-    line-height: 1.2;
+    font-size: .875rem;
+    line-height: 1.25rem;
   }
 
   @media screen and (min-width: 62rem) {
     font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
     font-size: .75rem;
     line-height: 1.25rem;
-    font-weight: 600;
   }
 `;
 

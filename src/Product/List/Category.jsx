@@ -9,6 +9,11 @@ const Heading = styled.h2`
   font-size: 1rem;
   line-height: 1.1875rem;
   font-weight: 400;
+
+  @media screen and (min-width: 48rem) {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
 `;
 
 function Head(props) {
