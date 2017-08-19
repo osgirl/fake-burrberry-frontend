@@ -14,17 +14,19 @@ const Heading = styled.h2`
 function Head(props) {
   return (
     <Heading>
-      {props.children}
+      {props.heading}
     </Heading>
   );
 }
 
+Head.propTypes = {
+  heading: PropTypes.string.isRequired,
+};
+
 function ProductCategory(props) {
   return (
     <div className="container">
-      <Head>
-        {props.heading}
-      </Head>
+      <Head heading={props.heading} />
       <div className="row">
         <div className="col-xs-6 col-md-3">
           <ProductPreviewExtended
@@ -121,12 +123,8 @@ function ProductCategory(props) {
   );
 }
 
-Head.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
 ProductCategory.propTypes = {
-  heading: PropTypes.element.isRequired,
+  heading: PropTypes.string.isRequired,
 };
 
 export default ProductCategory;

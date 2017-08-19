@@ -61,7 +61,8 @@ const Link = styled(RouterLink)`
 
 const Logo = styled.img`
   display: block;
-  margin: 1rem auto;
+  height: .75rem;
+  margin: 1.125rem auto;
 
   @media screen and (min-width: 48rem) {
     margin-top: 1.5rem;
@@ -95,7 +96,7 @@ const NavLink = Link.extend`
   color: #999;
 
   ${props =>
-    props.active &&
+    props.selected &&
     `
     border-bottom: 1px solid #171717;
     color: #171717;
@@ -137,7 +138,7 @@ export default () =>
     </div>
     <Nav>
       <NavLink to="/">WOMEN</NavLink>
-      <NavLink active to="/">
+      <NavLink selected to="/">
         MEN
       </NavLink>
       <NavLink to="/">CHILDREN</NavLink>

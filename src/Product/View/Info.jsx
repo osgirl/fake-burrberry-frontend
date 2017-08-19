@@ -9,13 +9,6 @@ const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .5rem;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
-  }
 `;
 
 const Price = styled.h2`

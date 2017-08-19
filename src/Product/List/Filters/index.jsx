@@ -41,8 +41,8 @@ function CaptionLink(props) {
 }
 
 CaptionLink.propTypes = {
-  href: PropTypes.element.isRequired,
-  children: PropTypes.element.isRequired,
+  href: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default () =>

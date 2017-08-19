@@ -2,15 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import RecommendationBlock from '../Preview';
 
-const Recommendations = styled.section`
-  padding: 0 .5rem;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
-  }
-`;
+const Recommendations = styled.section``;
 
 const Heading = styled.h2`
   display: block;
@@ -59,6 +51,7 @@ export default () =>
               img="img/wr1.jpg"
               alt="Emroided Hooded"
               name="Emroided Hooded Content For Three Lines"
+              colorsCount={7}
               price={27000}
               locale="ru"
             />
@@ -70,6 +63,7 @@ export default () =>
               img="img/wr2.jpg"
               alt="Relaxed Fit Stretch Jeans"
               name="Relaxed Fit Stretch Jeans Content For Three Lines"
+              colorsCount={7}
               price={22500}
               locale="ru"
             />
@@ -81,6 +75,7 @@ export default () =>
               img="img/wr3.jpg"
               alt="Leather and House"
               name="Leather and House Check Content For Three Lines"
+              colorsCount={7}
               price={120000}
               locale="ru"
             />
@@ -92,6 +87,7 @@ export default () =>
               img="img/wr4.jpg"
               alt="Leather Wingtip"
               name="Leather Wingtip Check Content For Three Lines"
+              colorsCount={7}
               price={46000}
               locale="ru"
             />

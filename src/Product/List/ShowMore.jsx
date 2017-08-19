@@ -45,9 +45,9 @@ function ShowMore(props) {
 }
 
 ShowMore.propTypes = {
-  viewed: PropTypes.element.isRequired,
-  summ: PropTypes.element.isRequired,
-  count: PropTypes.element.isRequired,
+  viewed: PropTypes.number.isRequired,
+  summ: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
 };
 
 export default ShowMore;

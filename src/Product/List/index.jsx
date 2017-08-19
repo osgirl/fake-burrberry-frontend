@@ -12,5 +12,5 @@ export default () =>
       <Divider />
     </div>
     <ProductCategory heading="Single Breasted Trench Coats" />
-    <More viewed="8" summ="17" count="9" />
+    <More viewed={8} summ={17} count={9} />
   </main>);

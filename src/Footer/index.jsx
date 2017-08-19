@@ -3,12 +3,8 @@ import styled from 'styled-components';
 import FooterNav from './FooterNav';
 
 const Footer = styled.footer`
-  padding: 2rem .5rem;
+  padding: 2rem 0;
   background: #f3f3f3;
-
-  @media screen and (min-width: 48rem) {
-    padding: 2rem 0;
-  }
 `;
 
 const Nav = styled.div`
@@ -29,7 +25,7 @@ const ShippingButton = styled.button`
   font-size: .75rem;
   line-height: 1rem;
   background: none;
-  color: #999999;
+  color: #999;
 
   @media screen and (min-width: 48rem) {
     display: inline-block;

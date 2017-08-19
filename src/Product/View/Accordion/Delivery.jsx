@@ -5,11 +5,10 @@ import { HiddenLg, VisibleLg } from '../../../common/Responsive';
 
 const Head = styled.section`
   border-top: 1px solid #c6c6c6;
-  @media screen and (min-width: 48rem) {
-    padding: 0;
+  @media screen and (min-width: 25rem) {
+    border: 0;
   }
 `;
-
 const Body = styled.div`
   padding-bottom: 2rem;
 
@@ -60,8 +59,8 @@ const Text = styled.p`
   line-height: 1rem;
 `;
 
-export default () => (
-  <div>
+export default () =>
+  (<div>
     <HiddenLg>
       <Head>
         <div className="container">
@@ -79,7 +78,9 @@ export default () => (
           <div className="col-xs-12 col-sm-5 col-lg-4 col-lg-offset-1">
             <Wrapper>
               <VisibleLg>
-                <BodyHeading>DELIVERY</BodyHeading>
+                <div className="container">
+                  <BodyHeading>DELIVERY</BodyHeading>
+                </div>
               </VisibleLg>
 
               <Bold>Free Next Day Delivery</Bold>
@@ -92,13 +93,10 @@ export default () => (
               <Text>Enjoy free returns on your order</Text>
 
               <Bold>Free Gift Packaging</Bold>
-              <Text>
-                  Discover our gift packaging, a gold lined box tied with a coloured ribbon
-              </Text>
+              <Text>Discover our gift packaging, a gold lined box tied with a coloured ribbon</Text>
             </Wrapper>
           </div>
         </div>
       </div>
     </Body>
-  </div>
-);
+  </div>);

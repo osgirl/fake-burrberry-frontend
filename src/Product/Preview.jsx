@@ -33,9 +33,13 @@ const Fit = styled.p`
   line-height: 1rem;
 `;
 
-const Like = styled.div`
+const Like = styled.button`
   width: 14px;
   height: 14px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
   background-image: url(${like});
 `;
 
@@ -64,7 +68,10 @@ const Colors = styled.p`
   line-height: 1rem;
 `;
 
-const ColorsCount = styled.span`text-decoration: underline;`;
+const ColorsCount = styled.span`
+  border-bottom: 1px solid #171717;
+  margin-left: 3px;
+`;
 
 const Price = styled.h5`
   margin: 0;
@@ -74,7 +81,7 @@ const Price = styled.h5`
   color: #999;
 `;
 
-function ProductPreviewExtended(props) {
+function Preview(props) {
   return (
     <Wrapper>
       <AncorBlock to={props.link}>
@@ -113,14 +120,18 @@ function ProductPreviewExtended(props) {
   );
 }
 
-ProductPreviewExtended.propTypes = {
-  link: PropTypes.element.isRequired,
-  img: PropTypes.element.isRequired,
-  alt: PropTypes.element.isRequired,
-  fit: PropTypes.element.isRequired,
-  name: PropTypes.element.isRequired,
-  colorsCount: PropTypes.element.isRequired,
-  price: PropTypes.element.isRequired,
+Preview.propTypes = {
+  link: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  fit: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  colorsCount: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
-export default ProductPreviewExtended;
+Preview.defaultProps = {
+  fit: 'Straight fit',
+};
+
+export default Preview;
