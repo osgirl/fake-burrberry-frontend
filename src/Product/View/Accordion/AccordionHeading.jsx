@@ -50,18 +50,18 @@ const Heading = styled.h2`
   }
 `;
 
-function AccordionHeading({ children }) {
+function AccordionHeading(props) {
   return (
     <Button type="button">
       <Heading>
-        {children}
+        {props.children}
       </Heading>
     </Button>
   );
 }
 
 AccordionHeading.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.string.isRequired,
 };
 
 export default AccordionHeading;

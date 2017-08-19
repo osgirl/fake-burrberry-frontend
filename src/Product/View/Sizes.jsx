@@ -70,8 +70,12 @@ function SizeButton(props) {
 }
 
 SizeButton.propTypes = {
-  active: PropTypes.element.isRequired,
-  name: PropTypes.element.isRequired,
+  active: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+SizeButton.defaultProps = {
+  active: false,
 };
 
 export default () =>

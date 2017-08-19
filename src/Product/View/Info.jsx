@@ -43,7 +43,7 @@ function FormattedPrice(props) {
 }
 
 FormattedPrice.propTypes = {
-  price: PropTypes.element.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default () =>

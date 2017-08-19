@@ -52,9 +52,13 @@ function ColorButton(props) {
 }
 
 ColorButton.propTypes = {
-  active: PropTypes.element.isRequired,
-  color: PropTypes.element.isRequired,
-  name: PropTypes.element.isRequired,
+  active: PropTypes.bool.isRequired,
+  color: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+ColorButton.defaultProps = {
+  active: false,
 };
 
 export default () =>
