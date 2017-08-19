@@ -10,13 +10,16 @@ import Product from './Product';
 import ProductList from './ProductList';
 import './index.css';
 
-const App = () =>
-  (<Router>
-    <div className="App">
-      <Route exact path="/" component={ProductList} />
-      <Route path="/product" component={Product} />
-    </div>
-  </Router>);
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={ProductList} />
+        <Route path="/product" component={Product} />
+      </div>
+    </Router>
+  );
+}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
