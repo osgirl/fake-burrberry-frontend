@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import FooterNav from './FooterNav';
+import NavLinks from './Nav';
 
 const Footer = styled.footer`
   padding: 2rem 0;
@@ -18,7 +18,7 @@ const Nav = styled.div`
     margin-bottom: 1rem;
   }
   @media screen and (min-width: 48rem) {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -85,7 +85,7 @@ const MoreLink = styled.a`
 export default () =>
   (<Footer>
     <Nav>
-      <FooterNav />
+      <NavLinks />
     </Nav>
 
     <div className="container">

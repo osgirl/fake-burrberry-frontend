@@ -48,23 +48,23 @@ SliderImg.propTypes = {
 export default () =>
   (<Slider>
     <SliderImg
-      src="img/img4.jpg"
-      srcset="img/img4.jpg 1x, img/img4@2x.jpg 2x, img/img4@3x.jpg 3x"
+      src="/img/img4.jpg"
+      srcset="/img/img4.jpg 1x, /img/img4@2x.jpg 2x, /img/img4@3x.jpg 3x"
       alt="gabardine coat front img"
     />
     <SliderImg
-      src="img/img3.jpg"
-      srcset="img/img3.jpg 1x, img/img3@2x.jpg 2x, img/img3@3x.jpg 3x"
+      src="/img/img3.jpg"
+      srcset="/img/img3.jpg 1x, /img/img3@2x.jpg 2x, /img/img3@3x.jpg 3x"
       alt="gabardine coat img 2"
     />
     <SliderImg
-      src="img/img2.jpg"
-      srcset="img/img2.jpg 1x, img/img2@2x.jpg 2x, img/img2@3x.jpg 3x"
+      src="/img/img2.jpg"
+      srcset="/img/img2.jpg 1x, /img/img2@2x.jpg 2x, /img/img2@3x.jpg 3x"
       alt="gabardine coat img 3"
     />
     <SliderImg
-      src="img/img1.jpg"
-      srcset="img/img1.jpg 1x, img/img1@2x.jpg 2x, img/img1@3x.jpg 3x"
+      src="/img/img1.jpg"
+      srcset="/img/img1.jpg 1x, /img/img1@2x.jpg 2x, /img/img1@3x.jpg 3x"
       alt="gabardine coat img 4"
     />
   </Slider>);

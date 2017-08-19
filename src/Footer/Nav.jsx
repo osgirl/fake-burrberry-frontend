@@ -37,6 +37,8 @@ const Ancor = styled.a`
   font-size: .75rem;
   line-height: 1rem;
   font-weight: 600;
+  border-bottom: 1px solid #171717;
+  text-decoration: none;
 `;
 
 export default () =>

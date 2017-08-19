@@ -64,13 +64,13 @@ const Gallery = () =>
   (<Wrapper className="">
     <div className="row">
       <div className="col-lg-4">
-        <GalleryImg src="img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
+        <GalleryImg src="/img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
       </div>
       <div className="col-lg-4">
-        <GalleryImg src="img/img2@2x.jpg" alt="Long Cotton Gabardine Coat" />
+        <GalleryImg src="/img/img2@2x.jpg" alt="Long Cotton Gabardine Coat" />
       </div>
       <div className="col-lg-4">
-        <GalleryImg src="img/img3@2x.jpg" alt="Long Cotton Gabardine Coat" />
+        <GalleryImg src="/img/img3@2x.jpg" alt="Long Cotton Gabardine Coat" />
       </div>
     </div>
   </Wrapper>);
@@ -110,7 +110,7 @@ export default () =>
       </div>
       <div className="col-xs-12 col-lg-8">
         <VisibleLg>
-          <GalleryImg src="img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
+          <GalleryImg src="/img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
         </VisibleLg>
       </div>
       <VisibleLg>

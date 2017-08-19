@@ -25,9 +25,11 @@ const Caption = styled.p`
 const Button = styled.button`
   padding: 1rem 2rem;
   margin: 0 auto;
+  font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
   line-height: 1rem;
   border: 1px solid #171717;
+  border-radius: 2px;
   color: #171717;
   background-color: transparent;
 `;

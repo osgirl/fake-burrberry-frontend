@@ -47,8 +47,8 @@ export default () =>
         <div className="row">
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
-              link="/"
-              img="img/wr1.jpg"
+              to="/"
+              img="/img/wr1.jpg"
               alt="Emroided Hooded"
               name="Emroided Hooded Content For Three Lines"
               colorsCount={7}
@@ -59,8 +59,8 @@ export default () =>
 
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
-              link="/"
-              img="img/wr2.jpg"
+              to="/"
+              img="/img/wr2.jpg"
               alt="Relaxed Fit Stretch Jeans"
               name="Relaxed Fit Stretch Jeans Content For Three Lines"
               colorsCount={7}
@@ -71,8 +71,8 @@ export default () =>
 
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
-              link="/"
-              img="img/wr3.jpg"
+              to="/"
+              img="/img/wr3.jpg"
               alt="Leather and House"
               name="Leather and House Check Content For Three Lines"
               colorsCount={7}
@@ -83,8 +83,8 @@ export default () =>
 
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
-              link="/"
-              img="img/wr4.jpg"
+              to="/"
+              img="/img/wr4.jpg"
               alt="Leather Wingtip"
               name="Leather Wingtip Check Content For Three Lines"
               colorsCount={7}

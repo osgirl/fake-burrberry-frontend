@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import chevron from '../assets/arrow.svg';
 import burger from '../assets/hamburger.svg';
@@ -26,7 +26,7 @@ const Shipping = styled.p`
     font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
     font-size: .75rem;
     line-height: 1rem;
-    font-weight: 600;
+    font-weight: 500;
     color: #999;
   }
 `;
@@ -38,7 +38,7 @@ const ShippingButton = styled.button`
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
   line-height: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #999;
   background: transparent;
   cursor: pointer;
@@ -95,13 +95,10 @@ const NavLink = Link.extend`
   font-weight: 600;
   text-decoration: none;
   color: #999;
-
-  ${props =>
-    props.selected &&
-    `
+  &.active {
     border-bottom: 1px solid #171717;
     color: #171717;
-  `};
+  }
 `;
 
 const MobileIcon = styled.button`
@@ -138,12 +135,10 @@ export default () =>
       </Header>
     </div>
     <Nav>
-      <NavLink to="/">WOMEN</NavLink>
-      <NavLink selected to="/">
-        MEN
-      </NavLink>
-      <NavLink to="/">CHILDREN</NavLink>
-      <NavLink to="/">BEAUTY</NavLink>
-      <NavLink to="/">EXPERIENCE</NavLink>
+      <NavLink to="/women">WOMEN</NavLink>
+      <NavLink to="/men">MEN</NavLink>
+      <NavLink to="/children">CHILDREN</NavLink>
+      <NavLink to="/beauty">BEAUTY</NavLink>
+      <NavLink to="/experience">EXPERIENCE</NavLink>
     </Nav>
   </Wrapper>);

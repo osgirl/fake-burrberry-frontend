@@ -7,7 +7,7 @@ import like from '../assets/like.svg';
 
 const Wrapper = styled.div`margin-bottom: 2rem;`;
 
-const AncorBlock = styled(Link)`
+const Ancor = styled(Link)`
   color: #171717;
   text-decoration: none;
 `;
@@ -83,26 +83,26 @@ const Price = styled.h5`
 function Preview(props) {
   return (
     <Wrapper>
-      <AncorBlock to={props.link}>
+      <Ancor to={`${props.to}`}>
         <Img src={props.img} alt={props.alt} />
-      </AncorBlock>
+      </Ancor>
       <More>
         <Fit>
-          {props.fit}
+          {props.label}
         </Fit>
         <Like />
       </More>
       <Name>
-        <AncorBlock to={props.link}>
+        <Ancor to={`${props.to}`}>
           {props.name}
-        </AncorBlock>
+        </Ancor>
       </Name>
       <Colors>
         Available in
         <ColorsCount>
-          <AncorBlock to={props.link}>
+          <Ancor to={`${props.to}`}>
             {props.colorsCount} colors
-          </AncorBlock>
+          </Ancor>
         </ColorsCount>
       </Colors>
       <Price>
@@ -120,17 +120,17 @@ function Preview(props) {
 }
 
 Preview.propTypes = {
-  link: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  fit: PropTypes.string,
+  label: PropTypes.string,
   name: PropTypes.string.isRequired,
   colorsCount: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
 };
 
 Preview.defaultProps = {
-  fit: 'Straight fit',
+  label: 'Straight fit',
 };
 
 export default Preview;

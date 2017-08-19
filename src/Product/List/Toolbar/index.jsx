@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Toolbar from './Toolbar';
+import Filters from './Filters';
 
-const Filters = styled.section`background-color: #f3f3f3;`;
+const Toolbar = styled.section`background-color: #f3f3f3;`;
 
 const Heading = styled.h1`
   padding: 2rem 0 1rem;
@@ -49,7 +49,7 @@ CaptionLink.propTypes = {
 };
 
 export default () =>
-  (<Filters>
+  (<Toolbar>
     <div className="container">
       <Heading>Men&apos;s Clothing</Heading>
       <div className="row">
@@ -62,6 +62,6 @@ export default () =>
           </Caption>
         </div>
       </div>
-      <Toolbar />
+      <Filters />
     </div>
-  </Filters>);
+  </Toolbar>);
