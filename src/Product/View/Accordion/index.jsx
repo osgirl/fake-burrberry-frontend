@@ -4,12 +4,8 @@ import Description from './Description';
 import Delivery from './Delivery';
 
 const Wrapper = styled.section`
-  padding: 0 .5rem;
   border-bottom: 1px solid #c6c6c6;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
+  @media screen and (min-width: 25rem) {
     border-bottom: 0;
   }
 
@@ -18,9 +14,8 @@ const Wrapper = styled.section`
   }
 `;
 
-export default () => (
-  <Wrapper>
+export default () =>
+  (<Wrapper>
     <Description />
     <Delivery />
-  </Wrapper>
-);
+  </Wrapper>);

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { VisibleLg } from '../common/Hidden';
-import TextBtn from '../common/TextButton';
+import { VisibleLg } from '../../common/Responsive';
+import TextBtn from '../../common/TextButton';
 
 const Sizes = styled.div`
   display: none;
@@ -28,7 +28,7 @@ const SizeTxt = styled.p`
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: .75rem;
-  line-height: 0.9375rem;
+  line-height: 1rem;
 `;
 
 const SizePanel = styled.div`
@@ -45,12 +45,19 @@ const Button = styled.button`
   margin-right: .5rem;
   border: 1px solid #171717;
   border-radius: 2px;
+  font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
+  font-weight: 400;
   line-height: 1rem;
   text-transform: uppercase;
   cursor: pointer;
-  font-weight: ${props => (props.active ? '700' : '400')};
   background-color: transparent;
+
+  ${props =>
+    props.active &&
+    `
+    font-weight: 700;
+  `};
 `;
 
 const TextButton = TextBtn.extend`margin: 0;`;
@@ -64,12 +71,12 @@ function SizeButton(props) {
 }
 
 SizeButton.propTypes = {
-  active: PropTypes.bool,
-  name: PropTypes.element.isRequired,
+  active: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 SizeButton.defaultProps = {
-  active: true,
+  active: false,
 };
 
 export default () =>

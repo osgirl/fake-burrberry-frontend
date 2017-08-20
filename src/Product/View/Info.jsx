@@ -2,20 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { FormattedNumber } from 'react-intl';
-import Code from '../common/ProductCode';
-import { HiddenLg } from '../common/Hidden';
+import Code from './Code';
+import { HiddenLg } from '../../common/Responsive';
 
 const Info = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 .5rem;
-
-  @media screen and (min-width: 48rem) {
-    padding-left: 0;
-    padding-right: 0;
-    border-bottom: 0;
-  }
 `;
 
 const Price = styled.h2`
@@ -50,7 +43,7 @@ function FormattedPrice(props) {
 }
 
 FormattedPrice.propTypes = {
-  price: PropTypes.element.isRequired,
+  price: PropTypes.number.isRequired,
 };
 
 export default () =>

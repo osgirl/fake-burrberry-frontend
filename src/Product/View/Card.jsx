@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../common/ProductHeader';
+import Header from './Header';
 import Slider from './Slider';
 import Info from './Info';
 import Color from './Color';
 import Sizes from './Sizes';
 import Btns from './Buttons';
-import { HiddenLg, VisibleLg } from '../common/Hidden';
-import TextBtn from '../common/TextButton';
+import { HiddenLg, VisibleLg } from '../../common/Responsive';
+import TextBtn from '../../common/TextButton';
 
 const FlexWrapper = styled.div`
   @media screen and (min-width: 62rem) {
@@ -28,7 +28,6 @@ const Bold = styled.h4`
 
 const Text = styled.p`
   margin: 0;
-  margin-bottom: 1.5rem;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: .75rem;
   line-height: 1rem;
@@ -36,8 +35,13 @@ const Text = styled.p`
 
 const ColorWrapper = styled.div`@media screen and (min-width: 62rem) {background-color: #d4bdad;}`;
 
-export default () => (
-  <ColorWrapper>
+const FrontImg = styled.img`
+  display: block;
+  width: 100%;
+`;
+
+export default () =>
+  (<ColorWrapper>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
@@ -47,7 +51,13 @@ export default () => (
         </div>
 
         <div className="col-xs-12 col-sm-7 col-md-6">
-          <Slider />
+          <VisibleLg>
+            <FrontImg src="/img/img4@2x.jpg" />
+          </VisibleLg>
+
+          <HiddenLg>
+            <Slider />
+          </HiddenLg>
         </div>
 
         <div className="col-xs-12 col-sm-5 col-md-6">
@@ -77,5 +87,4 @@ export default () => (
         </div>
       </div>
     </div>
-  </ColorWrapper>
-);
+  </ColorWrapper>);
