@@ -1,19 +1,22 @@
 # Fake Burberry.com Frontend
 
 This is my study-project for [evgenyrodionov's](https://github.com/evgenyrodionov) course.
-
-***
-
 Our work is in progress now, we're on the second chapter of the course.
+
+You can check out current version here: [Fake Burberry](https://build-wqnjmpucqa.now.sh)
+
+******
 
 ## What do we have so far
 
-_FIRST WEEK_
+_WEEK ONE_
+
 - Environment setup. VSCode, Zeplin, NodeJS and others.
 - Git basics
 - Simple html/css layouts for mobile and tablet devices were made
 
-_SECOND WEEK_
+_WEEK TWO_
+
 - Used create-react-app for a fast start with react
 - The whole structure of the layout is now divided in components, and displaying properly
 - Refactoring code for more deep react components understanding
@@ -24,12 +27,19 @@ _SECOND WEEK_
 - Implementing new features from the new mock to React app
 - React-responsive and react-intl added
 
+_WEEK THREE_
+
+- New page mock added (Product list adaptive layout)
+- [ESLint](https://eslint.org) with [airbnb config](https://www.npmjs.com/package/eslint-config-airbnb) integrated in the projecs, scripts for `lint` and `lint --fix` added (cool!)
+- [Husky](https://www.npmjs.com/package/husky) added for Git hooks: package.json scripts `prepush` and `precommit` added.
+- [Travis-ci.org](https://travis-ci.org/) integration added.
+- React-router added and customized for proper work.
+- Brand new directory structure added, for project's proper business logic.
+- `yarn build` made and deployed to now.sh [Last version](https://build-wqnjmpucqa.now.sh)
+
 _Next on the go:_
 
-*We are ALMOST here => _THIRD WEEK_*
-
-- New page mock
-- Adding interactivity to the project
+*_WEEK FOUR_*
 
 ## What we,ve used
 

@@ -144,7 +144,7 @@ Preview.propTypes = {
 };
 
 Preview.defaultProps = {
-  label: '',
+  label: null,
   colorsCount: 0,
 };
 

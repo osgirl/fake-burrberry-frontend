@@ -47,6 +47,7 @@ const FooterButton = styled.button`
   display: inline;
   padding: 0;
   border: 0;
+  font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-weight: 400;
   background: 0;
   color: #171717;
