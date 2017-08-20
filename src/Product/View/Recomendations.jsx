@@ -48,7 +48,7 @@ export default () =>
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
               to="/"
-              img="/img/wr1.jpg"
+              img="https://assets.burberry.com/is/image/Burberryltd/992cc4b8ea740128ac21ed7a8d95847ec2aee32e.jpg?$BBY_V2_ML_3X4$&wid=329&hei=439"
               alt="Emroided Hooded"
               name="Emroided Hooded Content For Three Lines"
               colorsCount={7}
@@ -60,7 +60,7 @@ export default () =>
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
               to="/"
-              img="/img/wr2.jpg"
+              img="https://assets.burberry.com/is/image/Burberryltd/cee85c95d80cb57e94bcc0e23bc8cb39f5ea431a.jpg?$BBY_V2_SL_3X4$&wid=329&hei=439"
               alt="Relaxed Fit Stretch Jeans"
               name="Relaxed Fit Stretch Jeans Content For Three Lines"
               colorsCount={7}
@@ -72,7 +72,7 @@ export default () =>
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
               to="/"
-              img="/img/wr3.jpg"
+              img="https://assets.burberry.com/is/image/Burberryltd/185a5bc29e70d2da7e7f610ac47461a5014bbabd.jpg?$BBY_V2_SL_3X4$&wid=329&hei=439"
               alt="Leather and House"
               name="Leather and House Check Content For Three Lines"
               colorsCount={7}
@@ -84,7 +84,7 @@ export default () =>
           <div className="col-xs-6 col-sm-3">
             <RecommendationBlock
               to="/"
-              img="/img/wr4.jpg"
+              img="https://assets.burberry.com/is/image/Burberryltd/0abe054b9d31b2b0a9cfdd7543b6b986e8a3ac54.jpg?$BBY_V2_SL_3X4$&wid=329&hei=439"
               alt="Leather Wingtip"
               name="Leather Wingtip Check Content For Three Lines"
               colorsCount={7}

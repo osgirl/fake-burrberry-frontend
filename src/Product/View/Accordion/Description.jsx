@@ -108,7 +108,8 @@ export default () =>
           </ul>
         </Body>
       </div>
-      <div className="col-xs-12 col-lg-8">
+      {/* my personal XL layout */}
+      <div className="col-xs-12 col-lg-8 col-xl-offset-1 col-xl-7">
         <VisibleLg>
           <GalleryImg src="/img/img1@2x.jpg" alt="Long Cotton Gabardine Coat" />
         </VisibleLg>

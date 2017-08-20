@@ -35,6 +35,11 @@ const Text = styled.p`
 
 const ColorWrapper = styled.div`@media screen and (min-width: 62rem) {background-color: #d4bdad;}`;
 
+const FrontImg = styled.img`
+  display: block;
+  width: 100%;
+`;
+
 export default () =>
   (<ColorWrapper>
     <div className="container">
@@ -46,7 +51,13 @@ export default () =>
         </div>
 
         <div className="col-xs-12 col-sm-7 col-md-6">
-          <Slider />
+          <VisibleLg>
+            <FrontImg src="/img/img4@2x.jpg" />
+          </VisibleLg>
+
+          <HiddenLg>
+            <Slider />
+          </HiddenLg>
         </div>
 
         <div className="col-xs-12 col-sm-5 col-md-6">

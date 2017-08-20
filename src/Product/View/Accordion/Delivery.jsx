@@ -70,7 +70,7 @@ export default () =>
       </HiddenMd>
       <div className="row">
         <div className="col-xs-12 col-md-7">
-          <DeliveryImg src="/img/delivery.jpg" alt="delivery image" />
+          <DeliveryImg src="/img/delivery@2x.jpg" alt="delivery image" />
         </div>
 
         <div className="col-xs-12 col-md-5 col-lg-4 col-lg-offset-1">
