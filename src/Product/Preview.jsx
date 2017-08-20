@@ -22,7 +22,6 @@ const Img = styled.img`
 const More = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: .5rem;
 `;
 
@@ -34,17 +33,19 @@ const Fit = styled.p`
 `;
 
 const Like = styled.button`
+  display: block;
   width: 14px;
   height: 14px;
   padding: 0;
   margin: 0;
+  margin-left: .5rem;
   border: 0;
   background-color: transparent;
   background-image: url(${like});
 `;
 
 const Name = styled.h3`
-  margin: .5rem 0;
+  margin: 0 0 .5rem;
   font-size: .75rem;
   line-height: 1rem;
   font-weight: 600;
@@ -81,30 +82,43 @@ const Price = styled.h5`
 `;
 
 function Preview(props) {
+  const LikeModule = () =>
+    (props.label != null
+      ? <div>
+        <More>
+          <Fit>
+            {props.label}
+          </Fit>
+          <Like />
+        </More>
+        <Name>
+          <Ancor to={`${props.to}`}>
+            {props.name}
+          </Ancor>
+        </Name>
+      </div>
+      : <More>
+        <Like />
+      </More>);
+
+  const ColorsModule = () =>
+    props.colorsCount > 0 &&
+    <Colors>
+      Available in&nbsp;
+      <ColorsCount>
+        <Ancor to={`${props.to}`}>
+          {props.colorsCount}&nbsp; colors
+        </Ancor>
+      </ColorsCount>
+    </Colors>;
+
   return (
     <Wrapper>
       <Ancor to={`${props.to}`}>
         <Img src={props.img} alt={props.alt} />
       </Ancor>
-      <More>
-        <Fit>
-          {props.label}
-        </Fit>
-        <Like />
-      </More>
-      <Name>
-        <Ancor to={`${props.to}`}>
-          {props.name}
-        </Ancor>
-      </Name>
-      <Colors>
-        Available in
-        <ColorsCount>
-          <Ancor to={`${props.to}`}>
-            {props.colorsCount} colors
-          </Ancor>
-        </ColorsCount>
-      </Colors>
+      <LikeModule label={props.label} />
+      <ColorsModule colorsCount={props.colorsCount} name={props.name} />
       <Price>
         <FormattedNumber
           style="currency" // eslint-disable-line
@@ -125,12 +139,13 @@ Preview.propTypes = {
   alt: PropTypes.string.isRequired,
   label: PropTypes.string,
   name: PropTypes.string.isRequired,
-  colorsCount: PropTypes.number.isRequired,
+  colorsCount: PropTypes.number,
   price: PropTypes.number.isRequired,
 };
 
 Preview.defaultProps = {
-  label: 'Straight fit',
+  label: '',
+  colorsCount: 0,
 };
 
 export default Preview;
