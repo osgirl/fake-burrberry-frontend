@@ -21,16 +21,18 @@ export default () =>
         <meta name="description" content="Welcome to burberry.com" />
       </Helmet>
       <Router>
-        <Header />
-        <div className="App">
-          <Switch>
-            <Route exact path="/:section" component={Products} />
-            <Route exact path="/:section/:category" component={Products} />
-            <Route path="/:section/:category/:id" component={Product} />
-            <Redirect from="/" to="/men/clothes" />
-          </Switch>
+        <div>
+          <Header />
+          <div className="App">
+            <Switch>
+              <Route exact path="/:section" component={Products} />
+              <Route exact path="/:section/:category" component={Products} />
+              <Route path="/:section/:category/:id" component={Product} />
+              <Redirect from="/" to="/men/clothes" />
+            </Switch>
+          </div>
+          <Footer />
         </div>
-        <Footer />
       </Router>
     </div>
   </IntlProvider>);
