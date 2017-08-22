@@ -21,7 +21,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .jsx,.js src",
-    "precommit": "eslint --ext .jsx,.js --fix src",
+    "fix": "eslint --ext .jsx,.js --fix src",
+    "precommit": "npm run fix",
     "prepush": "npm run lint"
   },
   "devDependencies": {
