@@ -140,6 +140,6 @@ export default () =>
       <NavLink to="/children">CHILDREN</NavLink>
       <NavLink to="/beauty">BEAUTY</NavLink>
       <NavLink to="/experience">EXPERIENCE</NavLink>
-      <NavLink to="/experience">TESTTESTTEST</NavLink>
+      <NavLink to="/experience">TEST</NavLink>
     </Nav>
   </Wrapper>);

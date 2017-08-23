@@ -15,12 +15,14 @@ after_success:
 
 deploy:
   - provider: script
+    email: fl.krasnov@gmail.com
     skip_cleanup: true
     script: now alias deploymentId $REACT_APP_PROD_URL
     on:
       branch: master
 
   - provider: script
+    email: fl.krasnov@gmail.com
     skip_cleanup: true
     script: now alias deploymentId $REACT_APP_DEV_URL
     on:
