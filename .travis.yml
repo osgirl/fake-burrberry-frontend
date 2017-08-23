@@ -16,12 +16,12 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: now alias deploymentId --token=$REACT_APP_USER_TOKEN $REACT_APP_PROD_URL
+    script: now alias (now build --public --token=$REACT_APP_USER_TOKEN) $REACT_APP_PROD_URL
     on:
       branch: master
 
   - provider: script
     skip_cleanup: true
-    script: now alias deploymentId --token=$REACT_APP_USER_TOKEN $REACT_APP_DEV_URL
+    script: now alias (now build --public --token=$REACT_APP_USER_TOKEN) $REACT_APP_DEV_URL
     on:
       branch: develop
