@@ -2,19 +2,11 @@ language: node_js
 node_js:
   - "6"
 
-env:
-  global:
-    - REACT_APP_DEV_URL=krasnov-burberry-fake-shop-for-study-dev
-    - REACT_APP_PROD_URL=krasnov-burberry-fake-shop-for-study
-
 cache: 
   yarn: true
   directories: 
     -node_modules
-
-before_script:
-  - npm run fix
-
+    
 script:
   - npm run lint
 
@@ -24,12 +16,12 @@ after_success:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: now alias $NOW_URL $REACT_APP_PROD_URL
+    script: now alias (now build --public) $REACT_APP_PROD_URL
     on:
       branch: master
 
   - provider: script
     skip_cleanup: true
-    script: now alias $NOW_URL $REACT_APP_DEV_URL
+    script: now alias (now build --public) $REACT_APP_DEV_URL
     on:
       branch: develop
