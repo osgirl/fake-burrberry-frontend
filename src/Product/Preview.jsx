@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { FormattedNumber } from 'react-intl';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import like from '../assets/like.svg';
 
 const Wrapper = styled.div`margin-bottom: 2rem;`;
 
@@ -34,15 +33,54 @@ const Fit = styled.p`
 
 const Like = styled.button`
   display: block;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   padding: 0;
   margin: 0;
   margin-left: .5rem;
   border: 0;
   background-color: transparent;
-  background-image: url(${like});
+  outline: 0;
+  cursor: pointer;
 `;
+
+class LikeButton extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      isLiked: false,
+    };
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isLiked: !prevState.isLiked,
+    }));
+  }
+
+  render() {
+    return (
+      <Like onClick={this.handleClick}>
+        <svg
+          style={{ overflow: 'visible' }}
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+        >
+          <title id="like">Like Icon</title>
+          <path
+            fill={this.state.isLiked ? '#171717' : '#fff'}
+            stroke={this.state.isLiked ? '#171717' : '#171717'}
+            // eslint-disable-next-line max-len
+            d="M7.00147577,14 L1.1995764,7.7486402 C-0.43417144,5.94319333 -0.39228047,3.05447833 1.28335834,1.29416763 C2.85426972,-0.353302646 5.34678245,-0.44357499 7.00147577,1.11362294 C8.67711458,-0.44357499 11.1905728,-0.353302646 12.7614842,1.3393038 L12.7614842,1.3393038 C14.395232,3.0996145 14.4161775,5.96576141 12.8033751,7.7486402 L12.8033751,7.7486402 L7.00147577,14 Z"
+            id="path-1"
+          />
+        </svg>
+      </Like>
+    );
+  }
+}
 
 const Name = styled.h3`
   margin: 0 0 .5rem;
@@ -89,7 +127,7 @@ function Preview(props) {
           <Fit>
             {props.label}
           </Fit>
-          <Like />
+          <LikeButton />
         </More>
         <Name>
           <Ancor to={`${props.to}`}>
@@ -98,7 +136,12 @@ function Preview(props) {
         </Name>
       </div>
       : <More>
-        <Like />
+        <Name>
+          <Ancor to={`${props.to}`}>
+            {props.name}
+          </Ancor>
+        </Name>
+        <LikeButton />
       </More>);
 
   const ColorsModule = () =>
