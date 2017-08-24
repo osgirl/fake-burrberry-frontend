@@ -31,7 +31,7 @@ const Shipping = styled.p`
   }
 `;
 
-const ShippingButton = styled.button`
+const ShippingButton = styled.select`
   display: inline-block;
   padding: 0;
   border: 0;
@@ -127,7 +127,12 @@ export default () =>
       <Header>
         <MobileIcon />
         <Shipping>
-          Shopping in: <ShippingButton>United Kingdom (£)</ShippingButton>
+          Shopping in:
+          <ShippingButton>
+            <option>Russian Federation (₽)</option>
+            <option>United Kingdom (£)</option>
+            <option>United States ($)</option>
+          </ShippingButton>
         </Shipping>
         <Link to="/">
           <Logo src={logo} alt="Burberry logo" />
