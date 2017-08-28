@@ -3,7 +3,9 @@
 This is my study-project for [evgenyrodionov's](https://github.com/evgenyrodionov) course.
 Our work is in progress now, we're on the second chapter of the course.
 
-You can check out current version here: [Fake Burberry](https://build-wqnjmpucqa.now.sh)
+You can check out latest **dev** build here: [krasnov-burberry-fake-shop-for-study-dev.now.sh](krasnov-burberry-fake-shop-for-study-dev.now.sh)
+
+Or latest **production** build here: [krasnov-burberry-fake-shop-for-study.now.sh](krasnov-burberry-fake-shop-for-study.now.sh)
 
 ******
 
@@ -39,7 +41,9 @@ _WEEK THREE_
 
 _Next on the go:_
 
-*_WEEK FOUR_*
+_**WEEK FOUR**_
+
+- Adding interactivity to components
 
 ## What we,ve used
 
