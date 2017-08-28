@@ -78,11 +78,13 @@ Button.propTypes = {
 class Dropdown extends Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
+
     this.state = {
       isOpened: false,
     };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
   handleClick() {
