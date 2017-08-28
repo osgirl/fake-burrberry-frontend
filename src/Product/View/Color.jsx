@@ -13,7 +13,7 @@ const colorIncome = [
   },
   {
     name: 'green',
-    color: '#005700',
+    color: 'orange',
   },
 ];
 
