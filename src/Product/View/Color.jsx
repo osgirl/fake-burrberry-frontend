@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const colorIncome = [
   {
@@ -9,6 +10,10 @@ const colorIncome = [
   {
     name: 'black',
     color: '#232122',
+  },
+  {
+    name: 'green',
+    color: '#005700',
   },
 ];
 
@@ -47,9 +52,7 @@ const Button = styled.button`
   outline: 0;
 `;
 
-// border: 1px solid #232122;
-
-class ColorButton extends Component {
+class ColorButtonInside extends Component {
   constructor(props) {
     super(props);
 
@@ -67,28 +70,42 @@ class ColorButton extends Component {
   }
 
   render() {
-    const colorSet = colorIncome.map(singleColor =>
-      (<Button
-        key={singleColor.name}
-        active={this.state.isSelected}
-        color={singleColor.color}
-        name={singleColor.name}
-        type="button"
+    return (
+      <Button
+        key={this.props.name}
         onClick={this.handleClick}
+        active={this.state.isSelected}
+        type="button"
+        color={this.props.color}
+        name={this.props.name}
         style={{
-          border: this.state.isSelected ? '1px solid red' : '1px solid transparent',
+          border: this.state.isSelected ? '1px solid #232122' : '1px solid transparent',
         }}
       >
-        choose {singleColor.name} color
-      </Button>),
-    );
-
-    return (
-      <ColorPanel>
-        {colorSet}
-      </ColorPanel>
+        {this.props.children}
+      </Button>
     );
   }
+}
+
+ColorButtonInside.propTypes = {
+  name: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
+
+function ColorButton() {
+  const colorSet = colorIncome.map(singleColor =>
+    (<ColorButtonInside key={singleColor.name} color={singleColor.color} name={singleColor.name}>
+      choose {singleColor.name} color
+    </ColorButtonInside>),
+  );
+
+  return (
+    <ColorPanel>
+      {colorSet}
+    </ColorPanel>
+  );
 }
 
 export default () =>
