@@ -135,8 +135,12 @@ Dropdown.propTypes = {
   children: PropTypes.node.isRequired,
   value: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
-  align: PropTypes.string.isRequired,
+  align: PropTypes.string,
   action: PropTypes.func.isRequired,
+};
+
+Dropdown.defaultProps = {
+  align: 'left',
 };
 
 export default Dropdown;
