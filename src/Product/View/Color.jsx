@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+
+const colorIncome = [
+  {
+    name: 'honey',
+    color: '#cfa880',
+  },
+  {
+    name: 'black',
+    color: '#232122',
+  },
+];
 
 const Colors = styled.div``;
 
@@ -34,32 +44,52 @@ const Button = styled.button`
   line-height: 0;
   cursor: pointer;
   background-color: ${props => props.color};
-
-  ${props =>
-    props.active &&
-    `
-    padding: 1.1875rem;
-    border: 1px solid #232122;
-  `};
+  outline: 0;
 `;
 
-function ColorButton(props) {
-  return (
-    <Button active={props.active} color={props.color} name={props.name} type="button">
-      choose {props.name} color
-    </Button>
-  );
+// border: 1px solid #232122;
+
+class ColorButton extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isSelected: false,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isSelected: !prevState.isSelected,
+    }));
+  }
+
+  render() {
+    const colorSet = colorIncome.map(singleColor =>
+      (<Button
+        key={singleColor.name}
+        active={this.state.isSelected}
+        color={singleColor.color}
+        name={singleColor.name}
+        type="button"
+        onClick={this.handleClick}
+        style={{
+          border: this.state.isSelected ? '1px solid red' : '1px solid transparent',
+        }}
+      >
+        choose {singleColor.name} color
+      </Button>),
+    );
+
+    return (
+      <ColorPanel>
+        {colorSet}
+      </ColorPanel>
+    );
+  }
 }
-
-ColorButton.propTypes = {
-  active: PropTypes.bool.isRequired,
-  color: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-};
-
-ColorButton.defaultProps = {
-  active: false,
-};
 
 export default () =>
   (<Colors>
@@ -67,9 +97,5 @@ export default () =>
       Colour: <b>Honey</b>
     </ColorTxt>
 
-    <ColorPanel>
-      <ColorButton color="#232122" name="black" />
-
-      <ColorButton active color="#cfa880" name="honey" />
-    </ColorPanel>
+    <ColorButton />
   </Colors>);
