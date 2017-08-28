@@ -90,7 +90,6 @@ class SizeButton extends Component {
     return (
       <Button
         onClick={this.handleClick}
-        name={this.props.name}
         type="button"
         style={{ fontWeight: this.state.isSelected ? 700 : 400 }}
       >
@@ -101,7 +100,6 @@ class SizeButton extends Component {
 }
 
 SizeButton.propTypes = {
-  name: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
