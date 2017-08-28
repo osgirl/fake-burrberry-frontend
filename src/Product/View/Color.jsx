@@ -8,8 +8,8 @@ const colorIncome = [
     color: '#cfa880',
   },
   {
-    name: 'black',
-    color: '#232122',
+    name: 'blue',
+    color: 'lightblue',
   },
   {
     name: 'green',
@@ -35,6 +35,7 @@ const ColorPanel = styled.div`
   @media screen and (min-width: 62rem) {
     margin-bottom: 0;
     padding-bottom: 1.5rem;
+    border-bottom: 0;
   }
 `;
 
@@ -94,7 +95,7 @@ ColorButtonInside.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-function ColorButton() {
+function ColorPalette() {
   const colorSet = colorIncome.map(singleColor =>
     (<ColorButtonInside key={singleColor.name} color={singleColor.color} name={singleColor.name}>
       choose {singleColor.name} color
@@ -114,5 +115,5 @@ export default () =>
       Colour: <b>Honey</b>
     </ColorTxt>
 
-    <ColorButton />
+    <ColorPalette />
   </Colors>);
