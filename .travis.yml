@@ -24,4 +24,4 @@ deploy:
     skip_cleanup: true
     script: now alias -t $NOW_TOKEN $(now build --public -t $NOW_TOKEN) $REACT_APP_DEV_URL
     on:
-      branch: develop
+      branch: dev
