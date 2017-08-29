@@ -9,12 +9,14 @@ class Toolbar extends Component {
     super(props);
     this.state = {
       color: '#171717',
+      isOpened: false,
     };
     this.onDropdown = this.onDropdown.bind(this);
   }
 
   onDropdown() {
-    this.setState(this.state.color === '#171717' ? { color: '#999' } : { color: '#171717' });
+    this.setState(prevState => !prevState.isOpened);
+    this.setState(this.state.isOpened ? { color: '#171717' } : { color: '#999' });
   }
 
   render() {

@@ -8,7 +8,7 @@ const sizesIncome = ['S', 'M', 'L', 'XL', 'XXL'];
 
 const Sizes = styled.div`
   display: none;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   justify-content: space-between;
   margin-bottom: 1.5rem;
 
@@ -29,26 +29,28 @@ const FlexBetween = styled.div`
 const SizeTxt = styled.p`
   margin-top: 0;
   margin-bottom: 1rem;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
 `;
 
 const SizePanel = styled.div`
   @media screen and (min-width: 62rem) {
     display: flex;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
   }
 `;
 
 const Button = styled.button`
   display: block;
-  padding: .5rem 1rem;
-  margin-right: .5rem;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
   border: 1px solid #171717;
   border-radius: 2px;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 400;
   line-height: 1rem;
   text-transform: uppercase;
@@ -60,17 +62,11 @@ const Button = styled.button`
 const TextButton = TextBtn.extend`margin: 0;`;
 
 function SizeButtons() {
-  const button = sizesIncome.map(singleSize =>
-    (<SizeButton key={singleSize.toString()}>
-      {singleSize}
-    </SizeButton>),
-  );
+  const button = sizesIncome.map(singleSize => (
+    <SizeButton key={singleSize.toString()}>{singleSize}</SizeButton>
+  ));
 
-  return (
-    <SizePanel>
-      {button}
-    </SizePanel>
-  );
+  return <SizePanel>{button}</SizePanel>;
 }
 
 class SizeButton extends Component {
@@ -107,8 +103,8 @@ SizeButton.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default () =>
-  (<Sizes>
+export default () => (
+  <Sizes>
     <FlexBetween>
       <SizeTxt>
         Size: <b>XL</b>
@@ -122,4 +118,5 @@ export default () =>
     <SizePanel>
       <SizeButtons />
     </SizePanel>
-  </Sizes>);
+  </Sizes>
+);
