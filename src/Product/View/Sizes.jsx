@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { VisibleLg } from '../../common/Responsive';
 import TextBtn from '../../common/TextButton';
 
@@ -51,7 +50,7 @@ const Button = styled.button`
   border-radius: 2px;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: ${props => (props.active ? 700 : 400)};
   line-height: 1rem;
   text-transform: uppercase;
   cursor: pointer;
@@ -61,62 +60,57 @@ const Button = styled.button`
 
 const TextButton = TextBtn.extend`margin: 0;`;
 
-function SizeButtons() {
-  const button = sizesIncome.map(singleSize => (
-    <SizeButton key={singleSize.toString()}>{singleSize}</SizeButton>
-  ));
-
-  return <SizePanel>{button}</SizePanel>;
-}
-
-class SizeButton extends Component {
+class SizePalette extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isSelected: false,
+      selectedSize: 'Select size',
+      isActive: false,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick() {
-    this.setState(prevState => ({
-      isSelected: !prevState.isSelected,
-    }));
+  handleClick(e) {
+    this.setState({
+      selectedSize: e.target.name,
+      isActive: !this.state.isActive,
+    });
   }
 
   render() {
+    const buttons = sizesIncome.map((singleSize, key) => {
+      const active = this.state.selectedSize === singleSize;
+      return (
+        <Button
+          key={key.toString()}
+          onClick={this.handleClick}
+          name={singleSize}
+          type="button"
+          active={active}
+        >
+          {singleSize}
+        </Button>
+      );
+    });
+
     return (
-      <Button
-        onClick={this.handleClick}
-        type="button"
-        style={{ fontWeight: this.state.isSelected ? 700 : 400 }}
-      >
-        {this.props.children}
-      </Button>
+      <Sizes>
+        <FlexBetween>
+          <SizeTxt>
+            Size: <b>{this.state.selectedSize}</b>
+          </SizeTxt>
+
+          <VisibleLg>
+            <TextButton>NEED SIZE HELP?</TextButton>
+          </VisibleLg>
+        </FlexBetween>
+
+        <SizePanel>{buttons}</SizePanel>
+      </Sizes>
     );
   }
 }
 
-SizeButton.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
-export default () => (
-  <Sizes>
-    <FlexBetween>
-      <SizeTxt>
-        Size: <b>XL</b>
-      </SizeTxt>
-
-      <VisibleLg>
-        <TextButton>NEED SIZE HELP?</TextButton>
-      </VisibleLg>
-    </FlexBetween>
-
-    <SizePanel>
-      <SizeButtons />
-    </SizePanel>
-  </Sizes>
-);
+export default SizePalette;
