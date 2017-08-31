@@ -4,14 +4,15 @@ import PropTypes from 'prop-types';
 import ProductPreviewExtended from '../Preview';
 
 const Heading = styled.h2`
-  margin: 2rem 0 1rem;
+  margin: 0;
+  padding: 2rem 0 1rem;
   font-family: Lora, serif;
   font-size: 1rem;
   line-height: 1.1875rem;
   font-weight: 400;
 
   @media screen and (min-width: 48rem) {
-    margin: 4rem 0 2rem;
+    padding: 4rem 0 2rem;
     font-size: 1.25rem;
     line-height: 1.5rem;
   }

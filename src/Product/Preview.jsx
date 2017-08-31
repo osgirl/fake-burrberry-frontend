@@ -75,7 +75,7 @@ function Preview(props) {
       <div>
         <More>
           <Fit>{props.label}</Fit>
-          <LikeButton />
+          <LikeButton width="15px" height="15px" />
         </More>
         <Name>
           <Ancor to={`${props.to}`}>{props.name}</Ancor>
@@ -86,7 +86,7 @@ function Preview(props) {
         <Name>
           <Ancor to={`${props.to}`}>{props.name}</Ancor>
         </Name>
-        <LikeButton />
+        <LikeButton width="15px" height="15px" />
       </More>
     ));
 

@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Filters from './Filters';
 
-const Toolbar = styled.section`background-color: #f3f3f3;`;
-
 const Heading = styled.h1`
   padding: 2rem 0 1rem;
   margin: 0;
@@ -21,8 +19,8 @@ const Heading = styled.h1`
 
 const Caption = styled.p`
   margin: 0;
-  margin-bottom: .5rem;
-  font-size: .75rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.75rem;
   line-height: 1.25rem;
   @media screen and (min-width: 48rem) {
     margin-bottom: 1rem;
@@ -36,11 +34,7 @@ const Link = styled.a`
 `;
 
 function CaptionLink(props) {
-  return (
-    <Link href={props.href}>
-      {props.children}
-    </Link>
-  );
+  return <Link href={props.href}>{props.children}</Link>;
 }
 
 CaptionLink.propTypes = {
@@ -48,20 +42,31 @@ CaptionLink.propTypes = {
   children: PropTypes.string.isRequired,
 };
 
-export default () =>
-  (<Toolbar>
-    <div className="container">
-      <Heading>Men&apos;s Clothing</Heading>
-      <div className="row">
-        <div className="col-xs-12 col-md-9 col-lg-7">
-          <Caption>
-            Explore our menswear collection for the season. Sculptural knitwear,{' '}
-            <CaptionLink href="/">sweatshirts</CaptionLink>, artist overalls and oversized cabans
-            feature alongside our signature trench coat in both heritage...{' '}
-            <CaptionLink href="/">More</CaptionLink>
-          </Caption>
+const ToolbarWrapper = styled.section`background-color: #f3f3f3;`;
+
+function Toolbar(props) {
+  return (
+    <ToolbarWrapper>
+      <div className="container">
+        <Heading>Men&apos;s Clothing</Heading>
+        <div className="row">
+          <div className="col-xs-12 col-md-9 col-lg-7">
+            <Caption>
+              Explore our menswear collection for the season. Sculptural knitwear,{' '}
+              <CaptionLink href="/">sweatshirts</CaptionLink>, artist overalls and oversized cabans
+              feature alongside our signature trench coat in both heritage...{' '}
+              <CaptionLink href="/">More</CaptionLink>
+            </Caption>
+          </div>
         </div>
+        <Filters getState={props.getState} />
       </div>
-      <Filters />
-    </div>
-  </Toolbar>);
+    </ToolbarWrapper>
+  );
+}
+
+Toolbar.propTypes = {
+  getState: PropTypes.func.isRequired,
+};
+
+export default Toolbar;

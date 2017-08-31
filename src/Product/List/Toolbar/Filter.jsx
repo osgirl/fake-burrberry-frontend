@@ -17,7 +17,7 @@ const Btn = styled.button`
   display: block;
   padding: 1.5rem 0;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   border: none;
   white-space: nowrap;
@@ -25,13 +25,14 @@ const Btn = styled.button`
   outline: 0;
   color: ${props => props.color};
   color: ${props => (props.isOpened ? '#171717' : '')};
+  cursor: pointer;
 
   &:after {
-    content: "";
+    content: '';
     display: inline-block;
     width: 12px;
     height: 6px;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     background-image: url(${chevron});
     background-size: cover;
     transform: ${props => (props.isOpened ? 'rotate(-180deg)' : 'none')};
@@ -44,11 +45,12 @@ const DropdownWindow = styled.div`
   top: 100%;
   display: inline-block;
   width: 377px;
-  padding: .5rem;
+  padding: 0.5rem;
   padding-top: 1rem;
   background-color: #f3f3f3;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
+  z-index: 20;
 
   @media screen and (min-width: 48rem) {
     padding: 1.5rem;
@@ -94,16 +96,21 @@ class Dropdown extends Component {
       document.removeEventListener('click', this.handleOutsideClick, false);
     }
 
-    this.setState(prevState => ({
-      isOpened: !prevState.isOpened,
-    }));
+    function passState() {
+      this.props.getState(this.state.isOpened);
+      this.props.getLocalState(this.state.isOpened);
+    }
+
+    this.setState(
+      prevState => ({
+        isOpened: !prevState.isOpened,
+      }),
+      passState,
+    );
   }
 
   handleOutsideClick(e) {
-    if (this.node.parentNode === e.target) {
-      return;
-    }
-
+    if (this.node.contains(e.target)) return;
     this.handleClick();
   }
 
@@ -111,23 +118,22 @@ class Dropdown extends Component {
     return (
       <DropdownWrap
         align={this.props.align}
-        ref={(node) => {
+        innerRef={(node) => {
           this.node = node;
         }}
       >
         <Button
           onClick={() => {
-            this.handleClick();
             this.props.action();
+            this.handleClick();
           }}
           value={this.props.value}
           isOpened={this.state.isOpened}
           color={this.props.color}
         />
-        {this.state.isOpened &&
-          <DropdownWindow align={this.props.align}>
-            {this.props.children}
-          </DropdownWindow>}
+        {this.state.isOpened && (
+          <DropdownWindow align={this.props.align}>{this.props.children}</DropdownWindow>
+        )}
       </DropdownWrap>
     );
   }
@@ -139,6 +145,8 @@ Dropdown.propTypes = {
   color: PropTypes.string.isRequired,
   align: PropTypes.string,
   action: PropTypes.func.isRequired,
+  getState: PropTypes.func.isRequired,
+  getLocalState: PropTypes.func.isRequired,
 };
 
 Dropdown.defaultProps = {
