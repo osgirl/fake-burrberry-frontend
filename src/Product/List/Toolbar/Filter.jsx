@@ -97,8 +97,8 @@ class Dropdown extends Component {
     }
 
     function passState() {
-      this.props.getState(this.state.isOpened);
-      this.props.getLocalState(this.state.isOpened);
+      this.props.changeState(this.state.isOpened);
+      this.props.changeLocalState(this.state.isOpened);
     }
 
     this.setState(
@@ -110,8 +110,7 @@ class Dropdown extends Component {
   }
 
   handleOutsideClick(e) {
-    if (this.node.contains(e.target)) return;
-    this.handleClick();
+    if (!this.node.contains(e.target)) this.handleClick();
   }
 
   render() {
@@ -145,8 +144,8 @@ Dropdown.propTypes = {
   color: PropTypes.string.isRequired,
   align: PropTypes.string,
   action: PropTypes.func.isRequired,
-  getState: PropTypes.func.isRequired,
-  getLocalState: PropTypes.func.isRequired,
+  changeState: PropTypes.func.isRequired,
+  changeLocalState: PropTypes.func.isRequired,
 };
 
 Dropdown.defaultProps = {

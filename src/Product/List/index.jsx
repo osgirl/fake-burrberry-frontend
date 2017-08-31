@@ -24,17 +24,17 @@ class Main extends Component {
     this.state = {
       isCovered: false,
     };
-    this.getDropdownState = this.getDropdownState.bind(this);
+    this.changeDropdownState = this.changeDropdownState.bind(this);
   }
 
-  getDropdownState(value) {
+  changeDropdownState(value) {
     this.setState({ isCovered: value });
   }
 
   render() {
     return (
       <div>
-        <Toolbar getState={this.getDropdownState} />
+        <Toolbar changeState={this.changeDropdownState} />
         <MainWrap covered={this.state.isCovered}>
           <div className="container">
             <ProductCategory heading="Heritage Trench Coats" />

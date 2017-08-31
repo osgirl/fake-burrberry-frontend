@@ -14,17 +14,17 @@ class Filters extends Component {
     };
 
     this.onDropdown = this.onDropdown.bind(this);
-    this.getDropdownState = this.getDropdownState.bind(this);
+    this.changeDropdownState = this.changeDropdownState.bind(this);
   }
 
   onDropdown() {
     this.setState({
-      isOpened: this.getDropdownState,
+      isOpened: this.changeDropdownState,
     });
     this.setState(this.state.isOpened ? { color: '#999' } : { color: '#171717' });
   }
 
-  getDropdownState(value) {
+  changeDropdownState(value) {
     this.setState({ isCovered: value });
   }
 
@@ -35,8 +35,8 @@ class Filters extends Component {
           value="Category"
           color={this.state.color}
           action={this.onDropdown}
-          getState={this.props.getState}
-          getLocalState={this.getDropdownState}
+          changeState={this.props.changeState}
+          changeLocalState={this.changeDropdownState}
         >
           <div>
             Content content content content content content content content content content content
@@ -49,8 +49,8 @@ class Filters extends Component {
           value="Colour"
           color={this.state.color}
           action={this.onDropdown}
-          getState={this.props.getState}
-          getLocalState={this.getDropdownState}
+          changeState={this.props.changeState}
+          changeLocalState={this.changeDropdownState}
         >
           <div>
             Content content content content content content content content content content content
@@ -63,8 +63,8 @@ class Filters extends Component {
           value="Size"
           color={this.state.color}
           action={this.onDropdown}
-          getState={this.props.getState}
-          getLocalState={this.getDropdownState}
+          changeState={this.props.changeState}
+          changeLocalState={this.changeDropdownState}
         >
           <div>
             Content content content content content content content content content content content
@@ -78,8 +78,8 @@ class Filters extends Component {
           value="Sort by price"
           color={this.state.color}
           action={this.onDropdown}
-          getState={this.props.getState}
-          getLocalState={this.getDropdownState}
+          changeState={this.props.changeState}
+          changeLocalState={this.changeDropdownState}
         >
           <div>high or low it’s medium length of content</div>
         </Dropdown>
@@ -89,7 +89,7 @@ class Filters extends Component {
 }
 
 Filters.propTypes = {
-  getState: PropTypes.func.isRequired,
+  changeState: PropTypes.func.isRequired,
 };
 
 export default Filters;

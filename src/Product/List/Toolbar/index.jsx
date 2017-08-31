@@ -59,14 +59,14 @@ function Toolbar(props) {
             </Caption>
           </div>
         </div>
-        <Filters getState={props.getState} />
+        <Filters changeState={props.changeState} />
       </div>
     </ToolbarWrapper>
   );
 }
 
 Toolbar.propTypes = {
-  getState: PropTypes.func.isRequired,
+  changeState: PropTypes.func.isRequired,
 };
 
 export default Toolbar;
