@@ -19,13 +19,13 @@ class Filters extends Component {
 
   onDropdown() {
     this.setState({
-      isOpened: this.changeDropdownState,
+      isOpened: false,
     });
-    this.setState(this.state.isOpened ? { color: '#999' } : { color: '#171717' });
+    this.setState(this.state.isOpened ? { color: 'red' } : { color: 'blue' });
   }
 
   changeDropdownState(value) {
-    this.setState({ isCovered: value });
+    this.setState({ isOpened: value });
   }
 
   render() {
@@ -34,7 +34,7 @@ class Filters extends Component {
         <Dropdown
           value="Category"
           color={this.state.color}
-          action={this.onDropdown}
+          handleDropdown={this.onDropdown}
           changeState={this.props.changeState}
           changeLocalState={this.changeDropdownState}
         >
@@ -48,7 +48,7 @@ class Filters extends Component {
         <Dropdown
           value="Colour"
           color={this.state.color}
-          action={this.onDropdown}
+          handleDropdown={this.onDropdown}
           changeState={this.props.changeState}
           changeLocalState={this.changeDropdownState}
         >
@@ -62,7 +62,7 @@ class Filters extends Component {
         <Dropdown
           value="Size"
           color={this.state.color}
-          action={this.onDropdown}
+          handleDropdown={this.onDropdown}
           changeState={this.props.changeState}
           changeLocalState={this.changeDropdownState}
         >
@@ -77,7 +77,7 @@ class Filters extends Component {
           align="right"
           value="Sort by price"
           color={this.state.color}
-          action={this.onDropdown}
+          handleDropdown={this.onDropdown}
           changeState={this.props.changeState}
           changeLocalState={this.changeDropdownState}
         >

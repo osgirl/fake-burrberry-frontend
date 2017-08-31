@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import chevron from '../../../assets/arrow.svg';
 
@@ -8,8 +8,12 @@ const DropdownWrap = styled.div`
   margin-right: 1rem;
   @media screen and (min-width: 48rem) {
     margin-right: 3rem;
-    margin-right: ${props => (props.align === 'right' ? '0' : '3rem')};
-    margin-left: ${props => (props.align === 'right' ? 'auto' : '0')};
+    ${props =>
+    props.align === 'right' &&
+      css`
+        margin-right: 0;
+        margin-left: auto;
+      `};
   }
 `;
 
@@ -24,7 +28,7 @@ const Btn = styled.button`
   background: transparent;
   outline: 0;
   color: ${props => props.color};
-  color: ${props => (props.isOpened ? '#171717' : '')};
+  color: ${props => (props.isOpened ? '#171717' : '#999')};
   cursor: pointer;
 
   &:after {
@@ -56,26 +60,15 @@ const DropdownWindow = styled.div`
     padding: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    left: ${props => (props.align === 'right' ? 'auto' : '-1.5rem')};
-    right: ${props => (props.align === 'right' ? '-1.5rem' : 'auto')};
-    width: ${props => (props.align === 'right' ? '149px' : '377px')};
+    ${props =>
+    props.align === 'right' &&
+      css`
+          left auto;
+          right: -1.5rem;
+          width: 149px;
+        `};
   }
 `;
-
-function Button(props) {
-  return (
-    <Btn onClick={props.onClick} isOpened={props.isOpened} color={props.color}>
-      {props.value}
-    </Btn>
-  );
-}
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-  isOpened: PropTypes.bool.isRequired,
-  color: PropTypes.string.isRequired,
-};
 
 class Dropdown extends Component {
   constructor(props) {
@@ -89,13 +82,15 @@ class Dropdown extends Component {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
   }
 
-  handleClick() {
-    if (!this.state.isOpened) {
-      document.addEventListener('click', this.handleOutsideClick, false);
-    } else {
-      document.removeEventListener('click', this.handleOutsideClick, false);
-    }
+  componentDidMount() {
+    document.addEventListener('click', this.handleOutsideClick, true);
+  }
 
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleOutsideClick, true);
+  }
+
+  handleClick() {
     function passState() {
       this.props.changeState(this.state.isOpened);
       this.props.changeLocalState(this.state.isOpened);
@@ -110,7 +105,11 @@ class Dropdown extends Component {
   }
 
   handleOutsideClick(e) {
-    if (!this.node.contains(e.target)) this.handleClick();
+    if (!this.node.contains(e.target)) {
+      this.setState({ isOpened: false });
+    }
+    this.props.changeState(this.state.isOpened);
+    this.props.changeLocalState(this.state.isOpened);
   }
 
   render() {
@@ -121,15 +120,17 @@ class Dropdown extends Component {
           this.node = node;
         }}
       >
-        <Button
+        <Btn
           onClick={() => {
-            this.props.action();
+            this.props.handleDropdown();
             this.handleClick();
           }}
           value={this.props.value}
           isOpened={this.state.isOpened}
           color={this.props.color}
-        />
+        >
+          {this.props.value}
+        </Btn>
         {this.state.isOpened && (
           <DropdownWindow align={this.props.align}>{this.props.children}</DropdownWindow>
         )}
@@ -143,7 +144,7 @@ Dropdown.propTypes = {
   value: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   align: PropTypes.string,
-  action: PropTypes.func.isRequired,
+  handleDropdown: PropTypes.func.isRequired,
   changeState: PropTypes.func.isRequired,
   changeLocalState: PropTypes.func.isRequired,
 };
