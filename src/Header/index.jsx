@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { NavLink as RouterLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import logo from '../assets/logo.svg';
 import chevron from '../assets/arrow.svg';
 import burger from '../assets/hamburger.svg';
 
 const Wrapper = styled.header`background: #fff;`;
 
-const Header = styled.div`
+const TopSection = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -24,7 +25,7 @@ const Shipping = styled.p`
     display: block;
     margin-top: -8px;
     font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-    font-size: .75rem;
+    font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 500;
     color: #999;
@@ -36,7 +37,7 @@ const ShippingButton = styled.select`
   padding: 0;
   border: 0;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
   color: #999;
@@ -44,11 +45,11 @@ const ShippingButton = styled.select`
   cursor: pointer;
 
   &:after {
-    content: "";
+    content: '';
     display: inline-block;
     width: 13px;
     height: 6px;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
     background-image: url(${chevron});
     background-size: cover;
   }
@@ -61,7 +62,7 @@ const Link = styled(RouterLink)`
 
 const Logo = styled.img`
   display: block;
-  height: .75rem;
+  height: 0.75rem;
   margin: 1.125rem auto;
 
   @media screen and (min-width: 48rem) {
@@ -89,7 +90,7 @@ const Nav = styled.nav`
 const NavLink = Link.extend`
   padding: 1rem;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   letter-spacing: 1.5px;
   font-weight: 600;
@@ -115,35 +116,67 @@ const MobileIcon = styled.button`
   background-image: url(${burger});
   background-repeat: no-repeat;
   background-position: left center;
+  outline: 0;
 
   @media screen and (min-width: 48rem) {
     display: none;
   }
 `;
 
-export default () =>
-  (<Wrapper>
-    <div className="container">
-      <Header>
-        <MobileIcon />
-        <Shipping>
-          Shopping in:
-          <ShippingButton>
-            <option>Russian Federation (₽)</option>
-            <option>United Kingdom (£)</option>
-            <option>United States ($)</option>
-          </ShippingButton>
-        </Shipping>
-        <Link to="/">
-          <Logo src={logo} alt="Burberry logo" />
-        </Link>
-      </Header>
-    </div>
-    <Nav>
-      <NavLink to="/women">WOMEN</NavLink>
-      <NavLink to="/men">MEN</NavLink>
-      <NavLink to="/children">CHILDREN</NavLink>
-      <NavLink to="/beauty">BEAUTY</NavLink>
-      <NavLink to="/experience">EXPERIENCE</NavLink>
-    </Nav>
-  </Wrapper>);
+class MobileMenu extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isOpened: false,
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.changeState();
+  }
+
+  render() {
+    return <MobileIcon onClick={this.handleClick} />;
+  }
+}
+
+MobileMenu.propTypes = {
+  changeState: PropTypes.func.isRequired,
+};
+
+function Header(props) {
+  return (
+    <Wrapper>
+      <div className="container">
+        <TopSection>
+          <MobileMenu changeState={props.changeState} />
+          <Shipping>
+            Shopping in:
+            <ShippingButton>
+              <option>Russian Federation (₽)</option>
+              <option>United Kingdom (£)</option>
+              <option>United States ($)</option>
+            </ShippingButton>
+          </Shipping>
+          <Link to="/">
+            <Logo src={logo} alt="Burberry logo" />
+          </Link>
+        </TopSection>
+      </div>
+      <Nav>
+        <NavLink to="/women">WOMEN</NavLink>
+        <NavLink to="/men">MEN</NavLink>
+        <NavLink to="/children">CHILDREN</NavLink>
+        <NavLink to="/beauty">BEAUTY</NavLink>
+        <NavLink to="/experience">EXPERIENCE</NavLink>
+      </Nav>
+    </Wrapper>
+  );
+}
+
+Header.propTypes = {
+  changeState: PropTypes.func.isRequired,
+};
+
+export default Header;

@@ -2,22 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import { VisibleLg } from '../common/Responsive';
 
-const NavHeading = styled.nav`
+const NavHeading = styled.h5`
   @media screen and (min-width: 48rem) {
     margin: 0;
     margin-bottom: 1rem;
-    font-size: .75rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    line-height: .875rem;
+    line-height: 0.875rem;
   }
 `;
 
 const Link = styled.a`
   @media screen and (min-width: 48rem) {
     display: block;
-    margin-bottom: .75rem;
-    font-size: .75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.75rem;
     font-weight: 500;
     line-height: 1rem;
     text-transform: capitalize;
@@ -34,15 +34,15 @@ const Img = styled.img`
 
 const Ancor = styled.a`
   color: #171717;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
   border-bottom: 1px solid #171717;
   text-decoration: none;
 `;
 
-export default () =>
-  (<div className="container">
+export default () => (
+  <div className="container">
     <div className="row">
       <div className="col-md-3">
         <nav>
@@ -92,4 +92,5 @@ export default () =>
         </VisibleLg>
       </div>
     </div>
-  </div>);
+  </div>
+);
