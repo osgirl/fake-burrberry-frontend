@@ -159,7 +159,7 @@ function Menu(props) {
 }
 
 Menu.propTypes = {
-  menuOpened: PropTypes.func.isRequired,
+  menuOpened: PropTypes.bool.isRequired,
   openStepTwo: PropTypes.func.isRequired,
 };
 
