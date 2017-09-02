@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-const colorIncome = [
+const colorData = [
   {
     name: 'honey',
     color: '#cfa880',
@@ -75,7 +75,7 @@ class ColorPalette extends Component {
   }
 
   render() {
-    const colorSet = colorIncome.map((singleColor, key) => {
+    const colorSet = colorData.map((singleColor, key) => {
       const active = this.state.selectedColor === singleColor.name;
       return (
         <Button

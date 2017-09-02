@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { VisibleLg } from '../../common/Responsive';
 import TextBtn from '../../common/TextButton';
 
-const sizesIncome = ['S', 'M', 'L', 'XL', 'XXL'];
+const sizesData = ['S', 'M', 'L', 'XL', 'XXL'];
 
 const Sizes = styled.div`
   display: none;
@@ -65,7 +65,7 @@ class SizePalette extends Component {
     super(props);
 
     this.state = {
-      selectedSize: 'Select size',
+      isSelected: '',
       isActive: false,
     };
 
@@ -74,14 +74,14 @@ class SizePalette extends Component {
 
   handleClick(e) {
     this.setState({
-      selectedSize: e.target.name,
+      isSelected: e.target.name,
       isActive: !this.state.isActive,
     });
   }
 
   render() {
-    const buttons = sizesIncome.map((singleSize, key) => {
-      const active = this.state.selectedSize === singleSize;
+    const buttons = sizesData.map((singleSize, key) => {
+      const active = this.state.isSelected === singleSize;
       return (
         <Button
           key={key.toString()}
@@ -99,7 +99,7 @@ class SizePalette extends Component {
       <Sizes>
         <FlexBetween>
           <SizeTxt>
-            Size: <b>{this.state.selectedSize}</b>
+            Size: <b>{this.state.isSelected}</b>
           </SizeTxt>
 
           <VisibleLg>
