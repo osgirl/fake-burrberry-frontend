@@ -3,7 +3,13 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Dropdown from './Filter';
 
-const Wrapper = styled.div`display: flex;`;
+const Wrapper = styled.div`
+  display: flex;
+  position: relative;
+  @media screen and (min-width: 48rem) {
+    position: static;
+  }
+`;
 
 class Filters extends Component {
   constructor(props) {

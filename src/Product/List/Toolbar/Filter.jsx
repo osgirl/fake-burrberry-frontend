@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import chevron from '../../../assets/arrow.svg';
 
 const DropdownWrap = styled.div`
-  position: relative;
   margin-right: 1rem;
   @media screen and (min-width: 48rem) {
+    position: relative;
     margin-right: 3rem;
     ${props =>
     props.align === 'right' &&
@@ -44,11 +44,12 @@ const Btn = styled.button`
 `;
 
 const DropdownWindow = styled.div`
+  box-sizing: border-box;
   position: absolute;
   left: -.5rem;
   top: 100%;
   display: inline-block;
-  width: 377px;
+  width: 100vw;
   padding: 0.5rem;
   padding-top: 1rem;
   background-color: #f3f3f3;
@@ -57,6 +58,7 @@ const DropdownWindow = styled.div`
   z-index: 20;
 
   @media screen and (min-width: 48rem) {
+    width: 377px;
     padding: 1.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
