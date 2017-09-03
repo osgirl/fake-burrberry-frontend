@@ -7,7 +7,7 @@ import Shop from './Shop';
 const Wrap = styled.div`
   position: fixed;
   top: 0;
-  left: ${props => (props.menuOpened ? '0' : '-274px')};
+  left: ${props => (props.menuToggled ? '0' : '-274px')};
   width: 274px;
   height: 100vh;
   background: #fff;
@@ -126,10 +126,10 @@ function Menu(props) {
   // }
 
   return (
-    <Wrap menuOpened={props.menuOpened}>
+    <Wrap menuToggled={props.menuToggled}>
       <div className="container">
         <Logo />
-        <Shop openStepTwo={props.openStepTwo} />
+        <Shop toggleStepTwo={props.toggleStepTwo} />
         <Navigation />
         <Locale />
       </div>
@@ -138,8 +138,8 @@ function Menu(props) {
 }
 
 Menu.propTypes = {
-  menuOpened: PropTypes.bool.isRequired,
-  openStepTwo: PropTypes.func.isRequired,
+  menuToggled: PropTypes.bool.isRequired,
+  toggleStepTwo: PropTypes.func.isRequired,
 };
 
 export default Menu;

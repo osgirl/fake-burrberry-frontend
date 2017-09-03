@@ -20,7 +20,7 @@ addLocaleData([...en, ...ru]);
 const Page = styled.div`overflow-x: hidden;`;
 
 const Wrapper = styled.div`
-  transform: ${props => (props.menuOpened ? 'translateX(274px);' : 'transform: translateX(0);')};
+  transform: ${props => (props.menuToggled ? 'translateX(274px);' : 'transform: translateX(0);')};
   transition: transform 0.2s ease-in;
   overflow-x: hidden;
 `;
@@ -29,22 +29,22 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isMobileMenuOpened: false,
-      isStepTwoOpened: false,
+      isMobileMenuToggled: false,
+      isStepTwoToggled: false,
     };
-    this.openMenu = this.openMenu.bind(this);
-    this.openStepTwo = this.openStepTwo.bind(this);
+    this.toggleMenu = this.toggleMenu.bind(this);
+    this.toggleStepTwo = this.toggleStepTwo.bind(this);
   }
 
-  openMenu() {
+  toggleMenu() {
     this.setState(prevState => ({
-      isMobileMenuOpened: !prevState.isMobileMenuOpened,
+      isMobileMenuToggled: !prevState.isMobileMenuToggled,
     }));
   }
 
-  openStepTwo() {
+  toggleStepTwo() {
     this.setState(prevState => ({
-      isStepTwoOpened: !prevState.isStepTwoOpened,
+      isStepTwoToggled: !prevState.isStepTwoToggled,
     }));
   }
 
@@ -59,15 +59,15 @@ class App extends Component {
           <Router>
             <div>
               <MobileMenu
-                menuOpened={this.state.isMobileMenuOpened}
-                openStepTwo={this.openStepTwo}
+                menuToggled={this.state.isMobileMenuToggled}
+                toggleStepTwo={this.toggleStepTwo}
               />
               <MobileMenuStep2
-                menuOpened={this.state.isStepTwoOpened}
-                openStepTwo={this.openStepTwo}
+                menuToggled={this.state.isStepTwoToggled}
+                toggleStepTwo={this.toggleStepTwo}
               />
-              <Wrapper menuOpened={this.state.isMobileMenuOpened}>
-                <Header changeState={this.openMenu} />
+              <Wrapper menuToggled={this.state.isMobileMenuToggled}>
+                <Header changeState={this.toggleMenu} />
                 <div className="App">
                   <Switch>
                     <Route exact path="/:section" component={Products} />

@@ -41,7 +41,7 @@ const category = [
 const Wrap = styled.section`
   position: fixed;
   top: 0;
-  left: ${props => (props.menuOpened ? '0' : '-274px')};
+  left: ${props => (props.menuToggled ? '0' : '-274px')};
   width: 274px;
   height: 100vh;
   background: #fff;
@@ -79,7 +79,7 @@ const BtnText = styled.span`
 function Home(props) {
   return (
     <div className="container">
-      <ButtonHome onClick={props.menuOpened}>
+      <ButtonHome onClick={props.menuToggled}>
         <BtnText>Home</BtnText>
       </ButtonHome>
     </div>
@@ -87,7 +87,7 @@ function Home(props) {
 }
 
 Home.propTypes = {
-  menuOpened: PropTypes.func.isRequired,
+  menuToggled: PropTypes.func.isRequired,
 };
 
 const Head = styled.div`position: relative;`;
@@ -150,8 +150,8 @@ function Menu(props) {
     </Link>
   ));
   return (
-    <Wrap menuOpened={props.menuOpened}>
-      <Home menuOpened={props.openStepTwo} />
+    <Wrap menuToggled={props.menuToggled}>
+      <Home menuToggled={props.toggleStepTwo} />
       <Heading />
       <div className="container">{buttons}</div>
     </Wrap>
@@ -159,8 +159,8 @@ function Menu(props) {
 }
 
 Menu.propTypes = {
-  menuOpened: PropTypes.bool.isRequired,
-  openStepTwo: PropTypes.func.isRequired,
+  menuToggled: PropTypes.bool.isRequired,
+  toggleStepTwo: PropTypes.func.isRequired,
 };
 
 export default Menu;

@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const colorData = [
   {
-    name: 'honey',
+    name: 'Honey',
     color: '#cfa880',
   },
   {
-    name: 'blue',
+    name: 'Blue',
     color: 'lightblue',
   },
   {
-    name: 'green',
+    name: 'Orange',
     color: 'orange',
   },
 ];
@@ -60,41 +60,35 @@ class ColorPalette extends Component {
     super(props);
 
     this.state = {
-      selectedColor: 'Select color',
-      isActive: false,
+      selectedColor: 0,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
-    this.setState({
-      selectedColor: e.target.name,
-      isActive: !this.state.isActive,
-    });
+    const id = Number(e.target.id);
+    this.setState({ selectedColor: id });
   }
 
   render() {
-    const colorSet = colorData.map((singleColor, key) => {
-      const active = this.state.selectedColor === singleColor.name;
-      return (
-        <Button
-          type="button"
-          key={key.toString()}
-          onClick={this.handleClick}
-          color={singleColor.color}
-          name={singleColor.name}
-          active={active}
-        >
-          choose {singleColor.name} color
-        </Button>
-      );
-    });
+    const colorSet = colorData.map((singleColor, key) => (
+      <Button
+        type="button"
+        key={key.toString()}
+        onClick={this.handleClick}
+        color={singleColor.color}
+        name={singleColor.name}
+        active={this.state.selectedColor === key}
+      >
+        choose {singleColor.name} color
+      </Button>
+    ));
 
     return (
       <Colors>
         <ColorTxt>
-          Colour: <b>{this.state.selectedColor}</b>
+          Colour: <b>{colorData[this.state.selectedColor].name}</b>
         </ColorTxt>
 
         <ColorPanel>{colorSet}</ColorPanel>

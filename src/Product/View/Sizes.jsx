@@ -65,41 +65,35 @@ class SizePalette extends Component {
     super(props);
 
     this.state = {
-      isSelected: '',
-      isActive: false,
+      isSelected: 0,
     };
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(e) {
-    this.setState({
-      isSelected: e.target.name,
-      isActive: !this.state.isActive,
-    });
+    const id = Number(e.target.id);
+    this.setState({ isSelected: id });
   }
 
   render() {
-    const buttons = sizesData.map((singleSize, key) => {
-      const active = this.state.isSelected === singleSize;
-      return (
-        <Button
-          key={key.toString()}
-          onClick={this.handleClick}
-          name={singleSize}
-          type="button"
-          active={active}
-        >
-          {singleSize}
-        </Button>
-      );
-    });
+    const buttons = sizesData.map((singleSize, key) => (
+      <Button
+        key={key.toString()}
+        onClick={this.handleClick}
+        name={singleSize}
+        type="button"
+        active={this.state.isSelected === key}
+      >
+        {singleSize}
+      </Button>
+    ));
 
     return (
       <Sizes>
         <FlexBetween>
           <SizeTxt>
-            Size: <b>{this.state.isSelected}</b>
+            Size: <b>{sizesData[this.state.isSelected]}</b>
           </SizeTxt>
 
           <VisibleLg>

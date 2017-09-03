@@ -58,6 +58,7 @@ const DropdownWindow = styled.div`
   z-index: 20;
 
   @media screen and (min-width: 48rem) {
+    left: -1.5rem;
     width: 377px;
     padding: 1.5rem;
     padding-top: 1rem;
@@ -65,10 +66,10 @@ const DropdownWindow = styled.div`
     ${props =>
     props.align === 'right' &&
       css`
-          left auto;
-          right: -1.5rem;
-          width: 149px;
-        `};
+        left: auto;
+        right: -1.5rem;
+        width: 149px;
+      `};
   }
 `;
 

@@ -35,16 +35,16 @@ const Button = styled.button`
 function Shop(props) {
   return (
     <ShopWrap>
-      <Button onClick={props.openStepTwo} type="button">
+      <Button onClick={props.toggleStepTwo} type="button">
         Men
       </Button>
-      <Button onClick={props.openStepTwo} type="button">
+      <Button onClick={props.toggleStepTwo} type="button">
         Women
       </Button>
-      <Button onClick={props.openStepTwo} type="button">
+      <Button onClick={props.toggleStepTwo} type="button">
         Children
       </Button>
-      <Button onClick={props.openStepTwo} type="button">
+      <Button onClick={props.toggleStepTwo} type="button">
         Beauty
       </Button>
     </ShopWrap>
@@ -52,7 +52,7 @@ function Shop(props) {
 }
 
 Shop.propTypes = {
-  openStepTwo: PropTypes.func.isRequired,
+  toggleStepTwo: PropTypes.func.isRequired,
 };
 
 export default Shop;

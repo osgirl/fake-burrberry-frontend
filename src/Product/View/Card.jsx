@@ -11,17 +11,19 @@ import TextBtn from '../../common/TextButton';
 
 const FlexWrapper = styled.div`
   @media screen and (min-width: 62rem) {
-    height: 100%;
+    box-sizing: border-box;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+    height: 100%;
+    padding: 4rem 0;
   }
 `;
 
 const Bold = styled.h4`
   margin: 0;
-  margin-bottom: .25rem;
-  font-size: .75rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
   font-weight: 700;
   line-height: 0.875rem;
 `;
@@ -29,19 +31,19 @@ const Bold = styled.h4`
 const Text = styled.p`
   margin: 0;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
 `;
 
-const ColorWrapper = styled.div`@media screen and (min-width: 62rem) {background-color: #d4bdad;}`;
+const Wrap = styled.div`@media screen and (min-width: 62rem) {background-color: #d4bdad;}`;
 
 const FrontImg = styled.img`
   display: block;
   width: 100%;
 `;
 
-export default () =>
-  (<ColorWrapper>
+export default () => (
+  <Wrap>
     <div className="container">
       <div className="row">
         <div className="col-xs-12">
@@ -87,4 +89,5 @@ export default () =>
         </div>
       </div>
     </div>
-  </ColorWrapper>);
+  </Wrap>
+);

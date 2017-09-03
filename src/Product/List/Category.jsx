@@ -28,7 +28,6 @@ Head.propTypes = {
 
 const productsCategoryOne = [
   {
-    key: '001',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/a2fa084eae958434c326685fc8ff19dfce9fe430.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -39,7 +38,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '002',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/fb6adea94455f2a73e97b5cf2d7811d9135dcbe2.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -50,7 +48,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '003',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/90dd344122ccf1884fce63c4fc775bd6baa7a11f.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -60,7 +57,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '004',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/995466e7e1113f3b2f6484ceb090072e1c9062dc.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -70,7 +66,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '005',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/a2fa084eae958434c326685fc8ff19dfce9fe430.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -81,7 +76,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '006',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/fb6adea94455f2a73e97b5cf2d7811d9135dcbe2.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -92,7 +86,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '007',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/90dd344122ccf1884fce63c4fc775bd6baa7a11f.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -102,7 +95,6 @@ const productsCategoryOne = [
     price: 1395,
   },
   {
-    key: '008',
     to: '/men/clothes/trenchcoat',
     img:
       'https://assets.burberry.com/is/image/Burberryltd/995466e7e1113f3b2f6484ceb090072e1c9062dc.jpg?$BBY_V2_ML_3X4$&wid=378&hei=505',
@@ -114,8 +106,8 @@ const productsCategoryOne = [
 ];
 
 function ProductCategory(props) {
-  const products = productsCategoryOne.map(product => (
-    <div key={product.key} className="col-xs-6 col-md-3">
+  const products = productsCategoryOne.map((product, key) => (
+    <div key={key.toString()} className="col-xs-6 col-md-3">
       <ProductPreviewExtended
         to={product.to}
         img={product.img}

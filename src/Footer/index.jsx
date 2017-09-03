@@ -27,7 +27,7 @@ const Shipping = styled.p`
   margin: 0;
   margin-bottom: 1rem;
   font-family: Raleway, Helvetica Neue, Helvetica, sans-serif;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1rem;
   color: #999999;
 
@@ -43,7 +43,7 @@ const Shipping = styled.p`
 
 const Language = Shipping.extend`margin-bottom: 1.5rem;`;
 
-const FooterButton = styled.button`
+const FooterSelect = styled.select`
   display: inline;
   padding: 0;
   border: 0;
@@ -72,7 +72,7 @@ const MoreLink = styled.a`
   margin-bottom: 0;
   font-family: Lora, serif;
   text-align: center;
-  font-size: .875rem;
+  font-size: 0.875rem;
   line-height: 1rem;
   font-style: italic;
   text-decoration: none;
@@ -83,21 +83,32 @@ const MoreLink = styled.a`
   }
 `;
 
-export default () =>
-  (<Footer>
+export default () => (
+  <Footer>
     <Nav>
       <NavLinks />
     </Nav>
 
     <div className="container">
       <Shipping>
-        Shipping country: <FooterButton type="button">Russian Federation</FooterButton>
+        Shipping country:
+        <FooterSelect type="button">
+          <option>Russian Federation</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+        </FooterSelect>
       </Shipping>
       <Language>
-        Language: <FooterButton type="button">English</FooterButton>
+        Language:
+        <FooterSelect type="button">
+          <option>Russian</option>
+          <option>English</option>
+          <option>Deutch</option>
+        </FooterSelect>
       </Language>
 
       <Help>Need help?</Help>
       <MoreLink href="/">Find out more and contact us</MoreLink>
     </div>
-  </Footer>);
+  </Footer>
+);
